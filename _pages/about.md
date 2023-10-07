@@ -27,6 +27,9 @@ My passion for parallel and distributed computer systems, serverless computing, 
 
 My **free time** is mostly devoted to music. I love singing and playing guitar, both on and off the stage, and am always open to discovering new genres. I frequently attend concerts or festivals, and get especially captivated by live performances that convey the perfect mixture of proficiency and humanity. Occasionally, I like to test the patience of fellow concert-goers by <a id="hoverText" href="https://en.wiktionary.org/wiki/air-drumming">air-drumming.</a>
 
+<!-- Prefetch air-drumming image for immediate change -->
+<img src="/assets/img/air-drumming.gif" style="display: none;" />
+
 <!-- Change profile picture to air-drumming on hover -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
