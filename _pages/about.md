@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: ECE Student, NTUA, Athens, Greece
+subtitle: ECE Student @NTUA | Visiting Researcher @Brown
 
 profile:
   align: right
@@ -19,14 +19,28 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a **senior undergraduate student** at the School of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en) of the [National Technical University of Athens](https://www.ntua.gr/en). Right now, in the context of my diploma thesis, I am working on the [PaSh Project](https://binpa.sh/), under the supervision of Prof. [Nikos Vasilakis](http://nikos.vasilak.is/).
+Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at the [National Technical University of Athens (NTUA)](https://www.ntua.gr/en/).
 
-I am interested in parallel and distributed **computer systems**, and serverless computing. Also, I am a big fan of the Unix shell, even if it may not be the most [forgiving](https://dev.to/kanani_nirav/gitlab-dev-deletes-entire-production-database-59bb), or the most [intuitive](https://xkcd.com/1168/). I continuously try to find ways to utilize its power, either for personal use or for systems-related projects.
+Currently, I am a **visiting researcher** at the [Computer Science Department](https://cs.brown.edu/) of [Brown University](https://www.brown.edu/). Here, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
-My **free time** is mostly devoted to music. I love singing and playing guitar (on/off stage), discovering new genres, and frequently going to concerts/festivals. I get really captivated by watching live performances that convey the perfect mixture of proficiency and humanity. Occasionally, I like to test the patience of fellow concert-goers by
-<a onclick="const gif = document.getElementById('air-drumming'); gif.style.display = gif.style.display === 'block' ? 'none' : 'block'" href="#air-drumming">air-drumming</a>.
+My passion for parallel and distributed computer systems, serverless computing, and the Unix shell is clearly expressed in my current research regarding the **serverless parallelization of shell scripts**. In general, I am a strong advocate of the shell and the power it possesses, so I firmly believe it deserves to be treated accordingly.
 
-<div id="air-drumming" style="display: none; text-align: center">
-  <img src="/assets/img/air-drumming.gif" width=250 />
-  <p><small><b>air-drumming (n.):</b> The action of playing imaginary drums, usually to accompany music that one is listening to.</small></p>
-</div>
+My **free time** is mostly devoted to music. I love singing and playing guitar, both on and off the stage, and am always open to discovering new genres. I frequently attend concerts or festivals, and get especially captivated by live performances that convey the perfect mixture of proficiency and humanity. Occasionally, I like to test the patience of fellow concert-goers by <a id="hoverText" href="https://en.wiktionary.org/wiki/air-drumming">air-drumming.</a>
+
+<!-- Change profile picture to air-drumming on hover -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const hoverText = document.getElementById("hoverText")
+      const profilePicture = document.getElementsByTagName("img")[0]
+
+      const originalSrc = profilePicture.src
+      const drummingSrc = "/assets/img/air-drumming.gif"
+
+      hoverText.addEventListener("mouseover", function() {
+        profilePicture.src = drummingSrc;
+      })
+      hoverText.addEventListener("mouseout", function() {
+        profilePicture.src = originalSrc;
+      })
+    })
+</script>
