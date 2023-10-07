@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: ECE Student @NTUA | Visiting Researcher @Brown
+subtitle: ECE Student @NTUA | Research Intern @Brown
 
 profile:
   align: right
@@ -21,7 +21,7 @@ social: true  # includes social icons at the bottom of the page
 
 Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at the [National Technical University of Athens (NTUA)](https://www.ntua.gr/en/).
 
-Currently, I am a **visiting researcher** at the [Computer Science Department](https://cs.brown.edu/) of [Brown University](https://www.brown.edu/). Here, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+Currently, I am a **research intern** at the [Computer Science Department](https://cs.brown.edu/) of [Brown University](https://www.brown.edu/). Here, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
 My passion for parallel and distributed computer systems, serverless computing, and the Unix shell is clearly expressed in my current research regarding the **serverless parallelization of shell scripts**. In general, I am a strong advocate of the shell and the power it possesses, so I firmly believe it deserves to be treated accordingly.
 
