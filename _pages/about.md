@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: ECE Student @NTUA | Research Intern @Brown
+subtitle: ECE Student @NTUA | Visiting Research Intern @BrownCS
 
 profile:
   align: right
@@ -21,9 +21,9 @@ social: true  # includes social icons at the bottom of the page
 
 Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at the [National Technical University of Athens (NTUA)](https://www.ntua.gr/en/).
 
-Currently, I am a **research intern** at the [Computer Science Department](https://cs.brown.edu/) of [Brown University](https://www.brown.edu/). Here, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+Currently, I am a **visiting research intern** at the [Computer Science Department](https://cs.brown.edu/) of [Brown University](https://www.brown.edu/). Here, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
-My passion for parallel and distributed computer systems, serverless computing, and the Unix shell is clearly expressed in my current research regarding the **serverless parallelization of shell scripts**. In general, I am a strong advocate of the shell and the power it possesses, so I firmly believe it deserves to be treated accordingly.
+My passion for parallel and distributed computer systems, serverless computing, and the Unix shell is clearly expressed in my **current research** on <u>improving the performance of shell scripts by running them on serverless infrastructure</u>. In general, I am a strong advocate of the shell and the power it possesses, so I firmly believe it deserves to be treated accordingly.
 
 My **free time** is mostly devoted to music. I love singing and playing guitar, both on and off the stage, and am always open to discovering new genres. I frequently attend concerts or festivals, and get especially captivated by live performances that convey the perfect mixture of proficiency and humanity. Occasionally, I like to test the patience of fellow concert-goers by <a id="hoverText" href="https://en.wiktionary.org/wiki/air-drumming">air-drumming.</a>
 
