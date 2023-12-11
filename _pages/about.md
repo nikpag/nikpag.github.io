@@ -19,9 +19,9 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at the [National Technical University of Athens (NTUA)](https://www.ntua.gr/en/).
+Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at [NTUA](https://www.ntua.gr/en/).
 
-Currently, I am a **visiting research intern** at the [Computer Science Department](https://cs.brown.edu/) of [Brown University](https://www.brown.edu/). Here, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+Currently, I am a **visiting research intern** at [BrownCS](https://cs.brown.edu/). As a member of the [ATLAS](https://atlas.cs.brown.edu/) group, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
 My passion for parallel and distributed computer systems, serverless computing, and the Unix shell is clearly expressed in my **current research** on <u>improving the performance of shell scripts by running them on serverless infrastructure</u>. In general, I am a strong advocate of the shell and the power it possesses, so I firmly believe it deserves to be treated accordingly.
 
