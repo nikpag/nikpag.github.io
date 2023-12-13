@@ -19,13 +19,14 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at [NTUA](https://www.ntua.gr/en/).
+Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at [NTUA](https://www.ntua.gr/en/). Currently, I am a **visiting research intern** at [BrownCS](https://cs.brown.edu/), and a member of the [ATLAS](https://atlas.cs.brown.edu/) research group. Here, I work on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
-Currently, I am a **visiting research intern** at [BrownCS](https://cs.brown.edu/). As a member of the [ATLAS](https://atlas.cs.brown.edu/) group, I am working on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+My **research interests** fall broadly into distributed systems and cloud computing. Right now, I am working on:
 
-My passion for parallel and distributed computer systems, serverless computing, and the Unix shell is clearly expressed in my **current research** on <u>improving the performance of shell scripts by running them on serverless infrastructure</u>. In general, I am a strong advocate of the shell and the power it possesses, so I firmly believe it deserves to be treated accordingly.
+- Improving the performance of shell programs by automatically scaling them out to serverless infrastructure
+- Providing fault tolerance for distributed shell execution
 
-My **free time** is mostly devoted to music. I love singing and playing guitar, both on and off the stage, and am always open to discovering new genres. I frequently attend concerts or festivals, and get especially captivated by live performances that convey the perfect mixture of proficiency and humanity. Occasionally, I like to test the patience of fellow concert-goers by <a id="hoverText" href="https://en.wiktionary.org/wiki/air-drumming">air-drumming.</a>
+My **free time** is mostly devoted to music. I love singing, playing guitar, discovering new genres, and attending concerts that convey a mix of proficiency and humanity. Occasionally, I like to test the patience of fellow concert-goers by <a id="hoverText" href="https://en.wiktionary.org/wiki/air-drumming">air-drumming.</a>
 
 <!-- Prefetch air-drumming image for immediate change -->
 <img src="/assets/img/air-drumming.gif" style="display: none;" />
