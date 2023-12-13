@@ -19,7 +19,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at [NTUA](https://www.ntua.gr/en/). Currently, I am a **visiting research intern** at [BrownCS](https://cs.brown.edu/), and a member of the [ATLAS](https://atlas.cs.brown.edu/) research group. Here, I work on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at [NTUA](https://www.ntua.gr/en/). Currently, I am a **visiting research intern** at [Brown CS](https://cs.brown.edu/), and a member of the [ATLAS](https://atlas.cs.brown.edu/) research group. Here, I work on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
 My **research interests** fall broadly into distributed systems and cloud computing. Right now, I am working on:
 
