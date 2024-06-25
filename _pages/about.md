@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: ECE Student @NTUA | Visiting Research Intern @BrownCS
+subtitle: CS PhD Student @ Columbia University
 
 profile:
   align: right
@@ -19,14 +19,11 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I am Nikos, a **senior undergraduate student** of [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) at [NTUA](https://www.ntua.gr/en/). Currently, I am a **visiting research intern** at [Brown CS](https://cs.brown.edu/), and a member of the [ATLAS](https://atlas.cs.brown.edu/) research group. Here, I work on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) Project, under the supervision of Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+Hi! I am Nikos, an incoming PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/). I am also a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown CS](https://cs.brown.edu/), where I work on [PaSh](https://binpa.sh/)—a [Linux Foundation](https://www.linuxfoundation.org/) project—advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/). I hold a Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from [NTUA](https://www.ntua.gr/en/).
 
-My **research interests** fall broadly into distributed systems and cloud computing. Right now, I am working on:
+My research interests are in distributed systems and cloud computing. Right now, I am working on accelerating shell programs by automatically scaling them out to serverless infrastructure, and providing fault tolerance for distributed shell execution.
 
-- Improving the performance of shell programs by automatically scaling them out to serverless infrastructure
-- Providing fault tolerance for distributed shell execution
-
-My **free time** is mostly devoted to music. I love singing, playing guitar, discovering new genres, and attending concerts that convey a mix of proficiency and humanity. Occasionally, I like to test the patience of fellow concert-goers by <a id="hoverText" href="https://en.wiktionary.org/wiki/air-drumming">air-drumming.</a>
+In my free time, I hunt down concerts that convey a mix of proficiency and humanity, and test the patience of fellow concert-goers by air-drumming.
 
 <!-- Prefetch air-drumming image for immediate change -->
 <img src="/assets/img/air-drumming.gif" style="display: none;" />
@@ -34,16 +31,15 @@ My **free time** is mostly devoted to music. I love singing, playing guitar, dis
 <!-- Change profile picture to air-drumming on hover -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const hoverText = document.getElementById("hoverText")
-      const profilePicture = document.getElementsByTagName("img")[0]
+      const profilePicture = document.getElementsByTagName("img")[0];
 
       const originalSrc = profilePicture.src
       const drummingSrc = "/assets/img/air-drumming.gif"
 
-      hoverText.addEventListener("mouseover", function() {
+      profilePicture.addEventListener("mouseover", function() {
         profilePicture.src = drummingSrc;
       })
-      hoverText.addEventListener("mouseout", function() {
+      profilePicture.addEventListener("mouseout", function() {
         profilePicture.src = originalSrc;
       })
     })

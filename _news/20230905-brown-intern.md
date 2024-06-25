@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I am joining [Brown CS](https://cs.brown.edu/) as a visiting research intern!
+I am joining [Brown CS](https://cs.brown.edu/) as a Student Intern!
