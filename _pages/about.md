@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: CS PhD Student @ Columbia University
+subtitle: Incoming CS PhD Student @ Columbia University
 
 profile:
   align: right
