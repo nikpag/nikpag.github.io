@@ -20,7 +20,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi! I am Nikos, a PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/) and a member of the [Nebula](https://nebula-cu.github.io) Lab, advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
+Hi! I am Nikos, a PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/) and member of the [Nebula](https://nebula-cu.github.io) Lab, advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
 
 I am also a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown CS](https://cs.brown.edu/), where I work on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
