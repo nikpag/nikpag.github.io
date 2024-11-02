@@ -63,7 +63,7 @@
 
 \newcommand{\name}[1]{\renewcommand{\name}{#1}} % Defines the \name command to set the user's name
 
-\newcommand{\addressSep}{$\diamond$} % Set default address separator to a diamond symbol
+\newcommand{\addressSep}{ | } % Set default address separator to a diamond symbol
 
 % One, two or three address lines can be specified
 \let \@addressone \relax
@@ -143,9 +143,9 @@
 		\textit{#3} \hfill \textit{#4} % Output job title and location
 	}%
 	\smallskip % Vertical whitespace
-	\begin{list}{$\cdot$}{\leftmargin=1em} % \cdot used for bullets, little indentation
+	\begin{list}{\( \bullet \)}{\leftmargin=1em} % dash used for bullets, little indentation
 		\setlength{\itemsep}{-0.5em} \vspace{-0.5em} % Reduce vertical spacing between items in the list for a tighter look
-		      }{
+		}{
 	\end{list}
 	\vspace{0.5em} % Vertical whitespace after the end of the list
 }

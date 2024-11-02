@@ -1,6 +1,15 @@
 \documentclass[letterpaper, 12pt]{resume}
 
-\usepackage{libertinus}
+
+\usepackage{fontspec}
+\setromanfont[Scale=MatchLowercase]{Minion Pro}
+\setsansfont[Scale=MatchLowercase]{Myriad Pro}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+
+\usepackage{unicode-math}
+\setmathfont[Scale=MatchLowercase]{Libertinus Math}
+
+% \usepackage{libertinus}
 \usepackage[colorlinks = true,
             linkcolor = blue,
             urlcolor  = blue,
@@ -25,19 +34,19 @@
 \begin{rSection}{Education}
     \begin{rSubsection}{Columbia University}{Sep 2024 --- Present}{PhD in Computer Science}{New York, NY, US}
         \item \textbf{Advisor:} Prof.\ Kostis Kaffes
-        \item \textbf{Research:} Improving the performance of LLM inference systems
+        \item Exploring how to improve the performance of LLM inference systems
     \end{rSubsection}
 
     \begin{rSubsection}{National Technical University of Athens}{Oct 2018 --- Jun 2024}{Master of Electrical and Computer Engineering}{Athens, Greece}
-        \item \textbf{GPA:} 9.39/10.00 (top 2\% of cohort)
+        \item \textbf{GPA:} \( 9.39/10.00 \) (top \( 2\% \) of cohort)
         % \item \textbf{Specialization:} Computer Science
-        \item \textbf{Related courses:} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks
+        % \item \textbf{Related courses:} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks
         \item \textbf{Thesis:} \textsc{SPLaSh}: Scaling Out Shell Scripts on Serverless Platforms
         \item \textbf{Advisors:} Prof.\ Georgios Goumas (NTUA), Prof.\ Nikos Vasilakis (Brown University)
     \end{rSubsection}
 \end{rSection}
 
-\begin{rSection}{Research and Work Experience}
+\begin{rSection}{Experience}
     \begin{rSubsection}{Brown University}{Sep 2023 --- May 2024}{Student Intern}{Providence, RI, US}
         \item \textbf{Advisor:} Prof.\ Nikos Vasilakis
         \item Conducted research on improving the performance of shell scripts by running them on serverless infrastructure
@@ -58,7 +67,13 @@
     % \end{rSubsection}
 \end{rSection}
 
-\begin{rSection}{Teaching Experience}
+\begin{rSection}{Honors and Awards}
+    \begin{rSubsection}{Columbia University Presidential Fellowship}{2024}{}{}
+        \item 1\% selection rate
+    \end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Teaching}
     \begin{rSubsection}{Brown University}{Spring 2024}{Teaching Assistant}{}
         \item \textbf{Course:} Distributed Systems
         \item \textbf{Professor:} N. Vasilakis
@@ -94,12 +109,6 @@
         \item[]
     \end{rSubsection}
     \vspace{-4ex}
-\end{rSection}
-
-\begin{rSection}{Honors and Awards}
-    \begin{rSubsection}{Presidential Fellowship}{2024}{Columbia University --- Fu Foundation School of Engineering and Applied Science}{}
-        \item \textbf{Selection rate:} 10/700 (1.4\%)
-    \end{rSubsection}
 \end{rSection}
 
 % \begin{rSection}{Competitions}
@@ -155,29 +164,29 @@
 % \end{rSection}
 
 % \begin{rSection}{Talks}
-    % \begin{rSubsection}{}{}{}{}
+% \begin{rSubsection}{}{}{}{}
 % SPLaSh: Towards serverless shell scripting
 % Brown, DSI building
 % 3rd PaSh workshop, 20231018
-    % \end{rSubsection}
+% \end{rSubsection}
 
-    % \begin{rSubsection}{}{}{}{}
+% \begin{rSubsection}{}{}{}{}
 % SPLaSh: Scaling Out Shell Scripts Using Serverless
 % Brown, CIT building
 % Sysread, 20231110
-    % \end{rSubsection}
+% \end{rSubsection}
 
-    % \begin{rSubsection}{}{}{}{}
-        % SPLaSh: Scaling out shell scripts on serverless platforms
-    % Brown, CIT building
-    % Sysread (SOSP pitch), 20240207
-    % \end{rSubsection}
+% \begin{rSubsection}{}{}{}{}
+% SPLaSh: Scaling out shell scripts on serverless platforms
+% Brown, CIT building
+% Sysread (SOSP pitch), 20240207
+% \end{rSubsection}
 
-    % \begin{rSubsection}{}{}{}{}
-        % SPLaSh: Scaling out shell scripts on serverless platforms
-        % Brown, DSI building
-        % PaSh retreat (Spring 2024), Apr 25 2024
-    % \end{rSubsection}
+% \begin{rSubsection}{}{}{}{}
+% SPLaSh: Scaling out shell scripts on serverless platforms
+% Brown, DSI building
+% PaSh retreat (Spring 2024), Apr 25 2024
+% \end{rSubsection}
 % \end{rSection}
 
 % Talks:
