@@ -26,7 +26,7 @@ I am also a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at
 
 I received my Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from the [National Technical University of Athens](https://www.ntua.gr/en/), where I was advised by Prof. [Georgios Goumas](http://www.cslab.ntua.gr/~goumas/).
 
-My research interests are in distributed systems, cloud computing, and systems for machine learning. Currently, I am working on:
+My research interests are in systems for machine learning, cloud computing, and distributed systems. Currently, I am working on:
 
 -   Improving the performance of LLM inference systems
 -   Accelerating shell programs by automatically scaling them out to serverless infrastructure
