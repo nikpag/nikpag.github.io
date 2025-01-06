@@ -1,25 +1,33 @@
 \documentclass[letterpaper, 12pt]{resume}
 
-
+%%% Packages
 \usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\usepackage{xspace}
+
+%%% Package options
 \setromanfont[Scale=MatchLowercase]{Minion Pro}
 \setsansfont[Scale=MatchLowercase]{Myriad Pro}
 \setmonofont[Scale=MatchLowercase]{Inconsolata}
-
-\usepackage{unicode-math}
 \setmathfont[Scale=MatchLowercase]{Libertinus Math}
 
-% \usepackage{libertinus}
-\usepackage[colorlinks = true,
-            linkcolor = blue,
-            urlcolor  = blue,
-            citecolor = blue,
-            anchorcolor = blue]{hyperref}
+%%% Annotations
+\newcounter{todo}
+\setcounter{todo}{0}
+\newcommand{\todo}[1]{\stepcounter{todo}\textbf{\textcolor{red}{[TODO \#\arabic{todo}: #1]}}}
+
+%%% Definitions
+\newcommand{\noitemvspace}{\vspace{-4ex}} 
+
+%%% Macros
+\newcommand{\heading}[1]{\textbf{#1:}\xspace}
 
 \name{Nikolaos Pagonas}
-
-% You can use the \address command up to 3 times for 3 different addresses or pieces of contact information
-% Any new lines (\\) you use in the \address commands will be converted to symbols, so each address will appear as a single line.
 
 \address{
     \href{mailto:nikospagonas00@gmail.com}{nikospagonas00@gmail.com} \\
@@ -28,37 +36,36 @@
 
 \begin{document}
 
-% TODO Add Minion Pro, Myriad Pro, and Inconsolatas as fonts
-% TODO Add \TODO macro
-
 \begin{rSection}{Education}
     \begin{rSubsection}{Columbia University}{Sep 2024 --- Present}{PhD in Computer Science}{New York, NY, US}
-        \item \textbf{Advisor:} Prof.\ Kostis Kaffes
-        \item Exploring how to improve the performance of LLM inference systems
+        \item \heading{Advisor} Prof.\ Kostis Kaffes
+        \item \heading{Project} Improving the performance of LLM inference systems
+        \item \heading{GPA (current)} \( 4.0 / 4.0 \)
     \end{rSubsection}
 
     \begin{rSubsection}{National Technical University of Athens}{Oct 2018 --- Jun 2024}{Master of Electrical and Computer Engineering}{Athens, Greece}
-        \item \textbf{GPA:} \( 9.39/10.00 \) (top \( 2\% \) of cohort)
-        % \item \textbf{Specialization:} Computer Science
-        % \item \textbf{Related courses:} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks
-        \item \textbf{Thesis:} \textsc{SPLaSh}: Scaling Out Shell Scripts on Serverless Platforms
-        \item \textbf{Advisors:} Prof.\ Georgios Goumas (NTUA), Prof.\ Nikos Vasilakis (Brown University)
+        \item \heading{GPA} \( 9.39 / 10.00 \) (top \( 2\% \) of cohort)
+        % \item \heading{Specialization:} Computer Science
+        % \item \heading{Related courses:} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks
+        \item \heading{Thesis} \textsc{SPLaSh}: Scaling Out Shell Scripts on Serverless Platforms
+        \item \heading{Advisors} Prof.\ Georgios Goumas (NTUA), Prof.\ Nikos Vasilakis (Brown University)
     \end{rSubsection}
 \end{rSection}
 
 \begin{rSection}{Experience}
-    \begin{rSubsection}{Brown University}{Sep 2023 --- May 2024}{Student Intern}{Providence, RI, US}
-        \item \textbf{Advisor:} Prof.\ Nikos Vasilakis
-        \item Conducted research on improving the performance of shell scripts by running them on serverless infrastructure
+    \begin{rSubsection}{Brown University}{Sep 2023 --- May 2024}{Student Researcher}{Providence, RI, US}
+        \item \heading{Advisor} Prof.\ Nikos Vasilakis
+        \item \heading{Project \#1} Improving the performance of shell scripts by running them on serverless infrastructure
+        \item \heading{Project \#2} Providing fault tolerance for distributed shell script execution
     \end{rSubsection}
 
-    \begin{rSubsection}{National Technical University of Athens}{Oct 2022 --- Sep 2023}{Technical Support}{Athens, Greece}
-        \item \textbf{Supervisors:} Prof.\ P. Tsanakas, Prof.\ E.\ D. Sykas
-        \item Provided technical support for the university's OpenStack cloud infrastructure, as well as its coursework platform, both used extensively by all nine departments
-    \end{rSubsection}
+    % \begin{rSubsection}{National Technical University of Athens}{Oct 2022 --- Sep 2023}{Technical Support}{Athens, Greece}
+    %     \item \heading{Supervisors} Prof.\ P. Tsanakas, Prof.\ E.\ D. Sykas
+    %     \item Provided technical support for the university's OpenStack cloud infrastructure, as well as its coursework platform, both used extensively by all nine departments
+    % \end{rSubsection}
 
     \begin{rSubsection}{Arrikto Inc.}{Dec 2022 --- Mar 2023}{Software Engineering Intern}{Athens, Greece}
-        \item Explored how the company can serve PyTorch models more efficiently by using KServe, a highly scalable machine learning deployment platform for Kubernetes
+        \item \heading{Project} Serving PyTorch models  more efficiently through KServe, a highly scalable machine learning deployment platform for Kubernetes
     \end{rSubsection}
 
     % \begin{rSubsection}{Seed Robotics}{Oct 2022 - Jun 2023}{Volunteer Robotics Instructor}{Athens, Greece}
@@ -69,46 +76,50 @@
 
 \begin{rSection}{Honors and Awards}
     \begin{rSubsection}{Columbia University Presidential Fellowship}{2024}{}{}
-        \item 1\% selection rate
+        \item[] \noitemvspace
     \end{rSubsection}
 \end{rSection}
 
 \begin{rSection}{Teaching}
+    \begin{rSubsection}{Brown University}{Fall 2024}{Project Shepherd}{}
+        \item \heading{Course} Systems Transforming Systems
+        \item \heading{Professor} N. Vasilakis
+        \item Guided students through a systems research project (implementation, evaluation, and paper writing)
+        \item Paper submitted to USENIX ATC 2025
+    \end{rSubsection}
+
     \begin{rSubsection}{Brown University}{Spring 2024}{Teaching Assistant}{}
-        \item \textbf{Course:} Distributed Systems
-        \item \textbf{Professor:} N. Vasilakis
-        \item Helped revamp the course by redesigning its semester-long project, and by implementing infrastructure for autograding distributed systems
+        \item \heading{Course} Distributed Systems
+        \item \heading{Professor} N. Vasilakis
+        \item Helped revamp the course by redesigning its semester-long project, and by implementing autograding infrastructure for the distributed systems built by the students
     \end{rSubsection}
 
     \begin{rSubsection}{National Technical University of Athens}{Spring 2022}{Lab Assistant}{}
-        \item \textbf{Course:} Operating Systems
-        \item \textbf{Professors:} N. Koziris, G. Goumas
+        \item \heading{Course} Operating Systems
+        \item \heading{Professors} N. Koziris, G. Goumas
     \end{rSubsection}
 
     \begin{rSubsection}{National Technical University of Athens}{Spring 2020}{Lab Assistant}{}
-        \item \textbf{Course:} Programming Techniques
-        \item \textbf{Professors:} N. Papaspyrou, A. Pagourtzis, G. Stamou, G. Goumas
+        \item \heading{Course} Programming Techniques
+        \item \heading{Professors} N. Papaspyrou, A. Pagourtzis, G. Stamou, G. Goumas
     \end{rSubsection}
 
     \begin{rSubsection}{National Technical University of Athens}{Fall 2019}{Lab Assistant}{}
-        \item \textbf{Course:} Introduction to Programming
-        \item \textbf{Professors:} S. Zachos, N. Papaspyrou, D. Fotakis
+        \item \heading{Course} Introduction to Programming
+        \item \heading{Professors} S. Zachos, N. Papaspyrou, D. Fotakis
     \end{rSubsection}
 \end{rSection}
 
 % \begin{rSection}{Publications}
-%     NONE
 % \end{rSection}
 
-% \begin{rSection}{Volunteering Experience}
-%     NONE
+% \begin{rSection}{Volunteering}
 % \end{rSection}
 
 \begin{rSection}{Service}
     \begin{rSubsection}{17th European Workshop on Systems Security --- EuroSec 2024}{2024}{Web and Publication Chair}{}
-        \item[]
+        \item[] \noitemvspace
     \end{rSubsection}
-    \vspace{-4ex}
 \end{rSection}
 
 % \begin{rSection}{Competitions}
@@ -118,7 +129,7 @@
 
 %     \begin{rSubsection}{IEEEXtreme}{2019-2022}{}{}
 %         \item Annual international programming competition held by IEEE
-%         \item \textbf{Proctor:} Prof. N. Koziris
+%         \item \heading{Proctor} Prof. N. Koziris
 %         \item Ranked 14th in Greece, 91st in Europe
 %     \end{rSubsection}
 % \end{rSection}
@@ -149,19 +160,13 @@
 
 % \end{rSection}
 
-
 \begin{rSection}{Skills}
-
     \begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
         Programming Languages & C, Python, Javascript, Shell, Java, Go              \\
         Platforms             & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
         Tools                 & Git, LaTeX
     \end{tabular}
-
 \end{rSection}
-
-% \begin{rSection}{Honors and Awards}
-% \end{rSection}
 
 % \begin{rSection}{Talks}
 % \begin{rSubsection}{}{}{}{}
@@ -188,13 +193,6 @@
 % PaSh retreat (Spring 2024), Apr 25 2024
 % \end{rSubsection}
 % \end{rSection}
-
-% Talks:
-
-
-
-
-
 
 \begin{rSection}{Languages}
     \begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
