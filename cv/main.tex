@@ -1,211 +1,128 @@
-\documentclass[letterpaper, 12pt]{resume}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Graduate Curriculum Vitae
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Packages
-\usepackage{fontspec}
-\usepackage{unicode-math}
-\usepackage[colorlinks = true,
-linkcolor = blue,
-urlcolor  = blue,
-citecolor = blue,
-anchorcolor = blue]{hyperref}
-\usepackage{xspace}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
 
-%%% Package options
-\setromanfont[Scale=MatchLowercase]{Minion Pro}
-\setsansfont[Scale=MatchLowercase]{Myriad Pro}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
-\setmathfont[Scale=MatchLowercase]{Libertinus Math}
+\documentclass[margin, 10pt]{resume} % Use the resume.cls style, the font size can be changed to 11pt or 12pt here
 
-%%% Annotations
-\newcounter{todo}
-\setcounter{todo}{0}
-\newcommand{\todo}[1]{\stepcounter{todo}\textbf{\textcolor{red}{[TODO \#\arabic{todo}: #1]}}}
+\usepackage{helvet} % Default font is the helvetica postscript font
+%\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
 
-%%% Definitions
-\newcommand{\noitemvspace}{\vspace{-4ex}} 
-
-%%% Macros
-\newcommand{\heading}[1]{\textbf{#1:}\xspace}
-
-\name{Nikolaos Pagonas}
-
-\address{
-    \href{mailto:nikospagonas00@gmail.com}{nikospagonas00@gmail.com} \\
-    \href{https://nikpag.github.io}{nikpag.github.io}
-}
+\setlength{\textwidth}{5.1in} % Text width of the document
 
 \begin{document}
 
-\begin{rSection}{Education}
-    \begin{rSubsection}{Columbia University}{Sep 2024 --- Present}{PhD in Computer Science}{New York, NY, US}
-        \item \heading{Advisor} Prof.\ Kostis Kaffes
-        \item \heading{Project} Improving the performance of LLM inference systems
-        \item \heading{GPA (current)} \( 4.0 / 4.0 \)
-    \end{rSubsection}
+%----------------------------------------------------------------------------------------
+%	NAME AND ADDRESS SECTION
+%----------------------------------------------------------------------------------------
 
-    \begin{rSubsection}{National Technical University of Athens}{Oct 2018 --- Jun 2024}{Master of Electrical and Computer Engineering}{Athens, Greece}
-        \item \heading{GPA} \( 9.39 / 10.00 \) (top \( 2\% \) of cohort)
-        % \item \heading{Specialization:} Computer Science
-        % \item \heading{Related courses:} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks
-        \item \heading{Thesis} \textsc{SPLaSh}: Scaling Out Shell Scripts on Serverless Platforms
-        \item \heading{Advisors} Prof.\ Georgios Goumas (NTUA), Prof.\ Nikos Vasilakis (Brown University)
-    \end{rSubsection}
-\end{rSection}
+\moveleft.5\hoffset\centerline{\large\bf John Smith} % Your name at the top
+ 
+\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
+ 
+\moveleft.5\hoffset\centerline{123 Broadway} % Your address
+\moveleft.5\hoffset\centerline{City, State 12345}
+\moveleft.5\hoffset\centerline{(000) 111-1111 or (111) 111-1112}
 
-\begin{rSection}{Experience}
-    \begin{rSubsection}{Brown University}{Sep 2023 --- May 2024}{Student Researcher}{Providence, RI, US}
-        \item \heading{Advisor} Prof.\ Nikos Vasilakis
-        \item \heading{Project \#1} Improving the performance of shell scripts by running them on serverless infrastructure
-        \item \heading{Project \#2} Providing fault tolerance for distributed shell script execution
-    \end{rSubsection}
+%----------------------------------------------------------------------------------------
 
-    % \begin{rSubsection}{National Technical University of Athens}{Oct 2022 --- Sep 2023}{Technical Support}{Athens, Greece}
-    %     \item \heading{Supervisors} Prof.\ P. Tsanakas, Prof.\ E.\ D. Sykas
-    %     \item Provided technical support for the university's OpenStack cloud infrastructure, as well as its coursework platform, both used extensively by all nine departments
-    % \end{rSubsection}
+\begin{resume}
 
-    \begin{rSubsection}{Arrikto Inc.}{Dec 2022 --- Mar 2023}{Software Engineering Intern}{Athens, Greece}
-        \item \heading{Project} Serving PyTorch models  more efficiently through KServe, a highly scalable machine learning deployment platform for Kubernetes
-    \end{rSubsection}
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE SECTION
+%----------------------------------------------------------------------------------------
+ 
+\section{OBJECTIVE}  
 
-    % \begin{rSubsection}{Seed Robotics}{Oct 2022 --- Jun 2023}{Volunteer Robotics Instructor}{Athens, Greece}
-    %     \item Guided school students through construction and programming of a plethora of robotics projects
-    %     \item Served as coordinator and leader of the school robotics team in the annual municipal festival on science, arts, and sports
-    % \end{rSubsection}
-\end{rSection}
+A position in the field of computers with special interests in business applications programming, information processing, and management systems. 
 
-\begin{rSection}{Honors and Awards}
-    \begin{rSubsection}{Columbia University Presidential Fellowship}{2024}{}{}
-        \item[] \noitemvspace
-    \end{rSubsection}
-\end{rSection}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
 
-\begin{rSection}{Teaching}
-    \begin{rSubsection}{Brown University}{Fall 2024}{Project Shepherd}{}
-        \item \heading{Course} Systems Transforming Systems
-        \item \heading{Professor} N. Vasilakis
-        \item Guided students through a systems research project (implementation, evaluation, and paper writing)
-        \item Paper submitted to USENIX ATC 2025
-    \end{rSubsection}
+\section{EDUCATION}
 
-    \begin{rSubsection}{Brown University}{Spring 2024}{Teaching Assistant}{}
-        \item \heading{Course} Distributed Systems
-        \item \heading{Professor} N. Vasilakis
-        \item Helped revamp the course by redesigning its semester-long project, and by implementing autograding infrastructure for the distributed systems built by the students
-    \end{rSubsection}
+{\sl Bachelor of Science,} Interdisciplinary Science \\
+Rensselaer Polytechnic Institute, Troy, NY, expected December 1990 \\
+Concentration: Computer Science \\
+Minor: Management 
+ 
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
 
-    \begin{rSubsection}{National Technical University of Athens}{Spring 2022}{Lab Assistant}{}
-        \item \heading{Course} Operating Systems
-        \item \heading{Professors} N. Koziris, G. Goumas
-    \end{rSubsection}
+\section{COMPUTER \\ SKILLS} 
 
-    \begin{rSubsection}{National Technical University of Athens}{Spring 2020}{Lab Assistant}{}
-        \item \heading{Course} Programming Techniques
-        \item \heading{Professors} N. Papaspyrou, A. Pagourtzis, G. Stamou, G. Goumas
-    \end{rSubsection}
+{\sl Languages \& Software:} 
+COBOL, IFPS, Focus, Megacalc, Pascal, Modula2, C, APL, SNOBOL, FORTRAN, LISP, SPIRES, BASIC, VSPC Autotab, IBM 370 Assembler, Lotus 1-2-3. \\
+{\sl Operating Systems:} MTS, TSO, Unix. 
+ 
+%----------------------------------------------------------------------------------------
+%	PROFESSIONAL EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+ 
+\section{EXPERIENCE}
 
-    \begin{rSubsection}{National Technical University of Athens}{Fall 2019}{Lab Assistant}{}
-        \item \heading{Course} Introduction to Programming
-        \item \heading{Professors} S. Zachos, N. Papaspyrou, D. Fotakis
-    \end{rSubsection}
-\end{rSection}
+{\sl Business Applications Programmer} \hfill Fall 1990 \\
+Allied-Signal Bendix Friction Materials Division, Financial Planning Department, Latham, NY 
 
-% \begin{rSection}{Publications}
-% \end{rSection}
+\begin{itemize} \itemsep -2pt % Reduce space between items
+\item Developed four ``user friendly" forecasting systems each of which produces 18 to 139 individual reports. 
+\item Developed or improved almost all IFPS programs used for financial reports. 
+\end{itemize}
+ 
+{\sl Research Programmer} \hfill Summer 1990 \\
+Psychology Department, Rensselaer Polytechnic Institute 
+\begin{itemize} 
+\item Performed computer aided statistical analysis of data. 
+\end{itemize} 
 
-% \begin{rSection}{Volunteering}
-% \end{rSection}
+{\sl Assistant Manager} \hfill Summers 1988-89 \\
+Thunder Restaurant, Canton, CT
+\begin{itemize}
+\item Recognized need for, developed, and wrote employee training manual. Performed various duties including cooking, employee training, ordering, and inventory control. 
+\end{itemize} 
 
-\begin{rSection}{Service}
-    \begin{rSubsection}{17th European Workshop on Systems Security --- EuroSec 2024}{2024}{Web and Publication Chair}{}
-        \item[] \noitemvspace
-    \end{rSubsection}
-\end{rSection}
+%----------------------------------------------------------------------------------------
+%	COMMUNITY SERVICE SECTION
+%---------------------------------------------------------------------------------------- 
 
-% \begin{rSection}{Competitions}
-%     \begin{rSubsection}{14th National Electrical and Computer Engineering Conference}{Apr 2023}{Volos, Greece}{}
-%         \item Won 1st place in the conference-wide programming competition
-%     \end{rSubsection}
+\section{COMMUNITY \\ SERVICE}
 
-%     \begin{rSubsection}{IEEEXtreme}{2019-2022}{}{}
-%         \item Annual international programming competition held by IEEE
-%         \item \heading{Proctor} Prof. N. Koziris
-%         \item Ranked 14th in Greece, 91st in Europe
-%     \end{rSubsection}
-% \end{rSection}
+Organized and directed the 1988 and 1989 Grand Marshall Week \\
+``Basketball Marathon.'' A 24 hour charity event to benefit the Troy Boys Club. Over 250 people participated each year. 
 
-% \begin{rSection}{Seminars}
-%     \begin{rSubsection}{Mega-ACE Blockchain Seminar}{2023}{}{}
-%         \item Lectures and workshops on blockchain, cryptography and smart contracts
-%         \item Co-organized by Purdue University (Prof. V. Zikas) and the National Technical University of Athens (Prof. A. Pagourtzis)
-%     \end{rSubsection}
-% \end{rSection}
+%----------------------------------------------------------------------------------------
+%	EXTRA-CURRICULAR ACTIVITIES SECTION
+%----------------------------------------------------------------------------------------
 
-% \begin{rSection}{Projects}
-%     \begin{rSubsection}{\href{https://github.com/nikpag/myCharts}{myCharts - Charts as a Service}}{Spring 2023}{}{}
-%         \item Web application that allows creating a variety of charts out of CSV data. Built with Docker and Apache Kafka in order to provide seamless deployment and high scalability.
-%     \end{rSubsection}
+\section{EXTRA-CURRICULAR \\ ACTIVITIES} 
 
-%     \begin{rSubsection}{\href{https://github.com/nikpag/Mockchain}{Mockchain}}{Fall 2022}{}{}
-%         \item Blockchain-based cryptocurrency system implemented in Go and deployed on the cloud.
-%     \end{rSubsection}
+Elected {\it House Manager}, Rho Phi Sorority \\
+Elected {\it Sports Chairman} \\
+Attended Krannet Leadership Conference \\
+Headed delegation to Rho Phi Congress \\
+Junior varsity basketball team \\
+Participant, seven intramural athletic teams 
 
-%     \begin{rSubsection}{\href{https://github.com/nikpag/KBeans}{KBeans}}{Fall 2022}{}{}
-%         \item Implementation of the k-means algorithm in OpenMP, CUDA, and MPI. Accompanied by thorough benchmarking in order to compare the three programming models.
-%     \end{rSubsection}
+%----------------------------------------------------------------------------------------
 
-%     \begin{rSubsection}{\href{https://github.com/nikpag/encryptIOn}{encryptIOn}}{Fall 2021}{}{}
-%         \item Terminal-based encrypted chat built with TCP/IP sockets for communication, cryptodev-linux for encryption, and virtIO for virtualization support.
-%     \end{rSubsection}
-
-% \end{rSection}
-
-\begin{rSection}{Skills}
-    \begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
-        Programming Languages & C, Python, Javascript, Shell, Java, Go              \\
-        Platforms             & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
-        Tools                 & Git, LaTeX
-    \end{tabular}
-\end{rSection}
-
-% \begin{rSection}{Talks}
-% \begin{rSubsection}{}{}{}{}
-% SPLaSh: Towards serverless shell scripting
-% Brown, DSI building
-% 3rd PaSh workshop, 20231018
-% \end{rSubsection}
-
-% \begin{rSubsection}{}{}{}{}
-% SPLaSh: Scaling Out Shell Scripts Using Serverless
-% Brown, CIT building
-% Sysread, 20231110
-% \end{rSubsection}
-
-% \begin{rSubsection}{}{}{}{}
-% SPLaSh: Scaling out shell scripts on serverless platforms
-% Brown, CIT building
-% Sysread (SOSP pitch), 20240207
-% \end{rSubsection}
-
-% \begin{rSubsection}{}{}{}{}
-% SPLaSh: Scaling out shell scripts on serverless platforms
-% Brown, DSI building
-% PaSh retreat (Spring 2024), Apr 25 2024
-% \end{rSubsection}
-% \end{rSection}
-
-\begin{rSection}{Languages}
-    \begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
-        English & Fluent --- TOEFL iBT 116/120 (C2) \\
-        Greek   & Native                            \\
-    \end{tabular}
-\end{rSection}
-
-% \begin{rSection}{References}
-% \end{rSection}
-
-% \begin{rSection}{Last Updated}
-%     \today
-% \end{rSection}
-
+\end{resume}
 \end{document}
