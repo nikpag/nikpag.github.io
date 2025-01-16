@@ -1,128 +1,240 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Graduate Curriculum Vitae
-% LaTeX Template
-% Version 1.1 (9/12/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
-%
-% Important note:
-% This template requires the resume.cls file to be in the same directory as the
-% .tex file. The resume.cls file provides the resume style used for structuring the
-% document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[margin, 12pt]{resume} 
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%%% Packages
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\usepackage{xspace}
+\usepackage{array}
+\usepackage{enumitem}
 
-\documentclass[margin, 10pt]{resume} % Use the resume.cls style, the font size can be changed to 11pt or 12pt here
+%%% Package options
+\setromanfont[Scale=MatchLowercase]{Minion Pro}
+\setsansfont[Scale=MatchLowercase]{Myriad Pro}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\setmathfont[Scale=MatchLowercase]{Libertinus Math}
+\setlist[itemize]{topsep=1ex, left=0em, labelsep=0.5em}
 
-\usepackage{helvet} % Default font is the helvetica postscript font
-%\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
+%%% Annotations
+\newcounter{todo}
+\setcounter{todo}{0}
+\newcommand{\todo}[1]{\stepcounter{todo}\textbf{\textcolor{red}{[TODO \#\arabic{todo}: #1]}}}
 
-\setlength{\textwidth}{5.1in} % Text width of the document
+%%% Definitions
+\newcommand{\titleName}{\Huge Nikos Pagonas}
+\newcommand{\cvName}{Nikos Pagonas}
+\newcommand{\email}{nikospagonas00@gmail.com}
+\newcommand{\website}{nikpag.github.io}
+\newcommand{\websiteLink}{https://\website}
+\newcommand{\splash}{\textsc{SPLaSh}\xspace}
+
+%%% Macros
+\newcommand{\authors}[1]{#1\xspace}
+\newcommand{\competition}[1]{\textbf{#1}\xspace}
+\newcommand{\cvBullet}{\textbullet\xspace}
+\newcommand{\degree}[1]{\textit{#1}\xspace}
+\newcommand{\equalContributionNote}{(*equal contribution)\xspace}
+\newcommand{\event}[1]{\textit{#1}\xspace}
+\newcommand{\fellowship}[1]{\textbf{#1}\xspace}
+\newcommand{\stitle}[1]{#1:\xspace}
+\newcommand{\institution}[1]{\textbf{#1}\xspace}
+\newcommand{\interval}[2]{#1 --- #2\xspace}
+\newcommand{\paperTitle}[1]{\textbf{#1}\xspace}
+\newcommand{\place}[1]{#1\xspace}
+\newcommand{\project}[2]{\textbf{\href{#2}{#1}}}
+\newcommand{\role}[1]{\textit{#1}\xspace}
+\newcommand{\seminar}[1]{\textbf{#1}\xspace}
+\newcommand{\service}[1]{\textbf{#1}\xspace}
+\newcommand{\talk}[1]{\textbf{#1}\xspace}
+\newcommand{\thesisTitle}[1]{\textit{``#1''}\xspace}
+\newcommand{\underSubmission}{\textit{(Under Submission)}\xspace}
+\newcommand{\venue}[1]{\textit{#1}\xspace}
+
+%%% Options
+\setlength{\textwidth}{5.1in} 
+\setlength{\parskip}{2ex}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	NAME AND ADDRESS SECTION
-%----------------------------------------------------------------------------------------
+\moveleft.5\hoffset\centerline{\large\bf \titleName} 
 
-\moveleft.5\hoffset\centerline{\large\bf John Smith} % Your name at the top
- 
 \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
- 
-\moveleft.5\hoffset\centerline{123 Broadway} % Your address
-\moveleft.5\hoffset\centerline{City, State 12345}
-\moveleft.5\hoffset\centerline{(000) 111-1111 or (111) 111-1112}
 
-%----------------------------------------------------------------------------------------
+\vspace{-3ex}
 
 \begin{resume}
 
-%----------------------------------------------------------------------------------------
-%	OBJECTIVE SECTION
-%----------------------------------------------------------------------------------------
+\section{Contact}
+
+Email: \href{mailto:\email}{\email} --- Website: \href{https://\websiteLink}{\website}
+
+\section{Education}
+
+\institution{Columbia University} \hfill \interval{Sep 2024}{Present} \\
+\degree{PhD in Computer Science} \hfill \place{New York, NY, US} \\
+\stitle{Advisor} Prof. Kostis Kaffes \\
+\stitle{GPA (current)} \( 4.0 / 4.0 \) \\
+Working on improving the performance of LLM inference systems.
+
+\institution{National Technical University of Athens (NTUA)} \hfill \interval{Oct 2018}{Jun 2024} \\
+\degree{Master of Electrical and Computer Engineering} \hfill \place{Athens, Greece} \\
+\stitle{Advisors} Prof. Nikos Vasilakis (Brown), Prof. Georgios Goumas (NTUA) \\
+\stitle{GPA} \( 9.39 / 10.00 \) (top \( 2\% \) of cohort) \\
+\stitle{Thesis} \thesisTitle{\splash: Scaling Out Shell Scripts on Serverless Platforms}
+% \stitle{Specialization} Computer Science 
+% \stitle{Related courses} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks
+
+
+\section{Experience}
+
+\institution{Brown University} \hfill \interval{Sep 2023}{May 2024} \\
+\role{Student Researcher} \hfill \place{Providence, RI, US} \\
+\stitle{Advisor} Prof. Nikos Vasilakis \\
+Worked on improving the performance of shell scripts by running them on serverless infrastructure, and providing fault tolerance for distributed shell script execution.
+
+% \institution{National Technical University of Athens} \hfill \interval{Oct 2022}{Sep 2023} \\
+% \role{Technical Support} \hfill \place{Athens, Greece} \\
+% \stitle{Supervisors} Prof. P. Tsanakas, Prof. E. D. Sykas \\
+% Provided technical support for the university's OpenStack cloud infrastructure and coursework platform, both used extensively by all nine departments.
+
+\institution{Arrikto Inc.} \hfill \interval{Dec 2022}{Mar 2023} \\
+\role{Software Engineering Intern} \hfill \place{Athens, Greece} \\
+Explored how to serve PyTorch models more efficiently through KServe, a highly scalable machine learning deployment platform for Kubernetes.
+
+\section{Awards}
+
+\fellowship{Columbia University Presidential Fellowship} \hfill 2024
+
+\section{Publications}
+
+\newcommand{\me}{\textbf{\cvName}\xspace}
+
+\paperTitle{007: Agent-First Systems} \\
+\underSubmission
+% \authors{Jiaxiang Liu*, \me{}*, Haonan Wang*, Eugene Wu, Kostis Kaffes, Anirudh Sivaraman, Zhou Yu, Deepak Dastrala, Raman Jatkar \equalContributionNote} \\ 
+% \venue{20th Workshop on Hot Topics in Operating Systems (HotOS 2025)}
+
+\paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Recoverable Serverless Computing} \\
+\underSubmission 
+% \authors{Yizheng Xie, \me, Yuchen Lu, Yu Nie, Haoran Zhang, Konstantinos Kallas, Nikos Vasilakis} \\
+% \venue{2025 USENIX Annual Technical Conference (ATC `25)}
+
+\paperTitle{Fractal: Fault-Tolerant Shell-Script Distribution} \\
+\underSubmission 
+% \authors{Ramiz Dundar*, Zhicheng Huang*, Yizheng Xie, \me, Konstantinos Kallas, Nikos Vasilakis \equalContributionNote} \\
+% \venue{19th USENIX Symposium on Operating Systems Design and Implementation (OSDI `25)}
+
+\section{Service}
+
+\service{17th European Workshop on Systems Security (EuroSec 2024)} \hfill 2024 \\
+\role{Web and Publication Chair}
+
+\section{Teaching}
+
+\institution{Brown University} \hfill Fall 2024 \\
+\role{Project Shepherd} \hfill Providence, RI, US \\
+\stitle{Course} Systems Transforming Systems \\
+\stitle{Professor} N. Vasilakis \\
+Guided students through a systems research project, including implementation, evaluation, and paper writing. Paper submitted to USENIX ATC `25.
+
+\institution{Brown University} \hfill Spring 2024 \\
+\role{Teaching Assistant} \hfill Providence, RI, US \\
+\stitle{Course} Distributed Systems \\
+\stitle{Professor} N. Vasilakis \\
+Helped revamp the course by redesigning its semester-long project and implementing its autograding infrastructure from scratch.
+
+\institution{National Technical University of Athens} \hfill Spring 2022 \\
+\role{Lab Assistant} \hfill Athens, Greece \\
+\stitle{Course} Operating Systems \\
+\stitle{Professors} N. Koziris, G. Goumas
+
+\institution{National Technical University of Athens} \hfill Spring 2020 \\
+\role{Lab Assistant} \hfill Athens, Greece \\
+\stitle{Course} Programming Techniques \\
+\stitle{Professors} N. Papaspyrou, A. Pagourtzis, G. Stamou, G. Goumas
+
+\institution{National Technical University of Athens} \hfill Fall 2019 \\
+\role{Lab Assistant} \hfill Athens, Greece \\
+\stitle{Course} Introduction to Programming \\
+\stitle{Professors} S. Zachos, N. Papaspyrou, D. Fotakis
+
+\section{Volunteering}
+
+\institution{Seed Robotics} \hfill Oct 2022 --- Jun 2023 \\
+\role{Robotics Instructor} \hfill Athens, Greece \\
+Guided school students through construction and programming of a series of robotics projects. Served as coordinator and leader of the school robotics team in the annual municipal festival on science, arts, and sports.
  
-\section{OBJECTIVE}  
+\section{Skills}
 
-A position in the field of computers with special interests in business applications programming, information processing, and management systems. 
+\begin{tabular}{@{} >{\bfseries}r l @{}}
+    Prog. Languages & C, Python, Javascript, Shell, Java, Go              \\
+    Platforms & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
+    Tools & Git, LaTeX
+\end{tabular}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+\section{Languages}
 
-\section{EDUCATION}
+\begin{tabular}{@{} >{\bfseries}r l @{}}
+    English & Fluent --- TOEFL iBT \( 116/120 \) (C2) \\
+    Greek & Native \\ 
+\end{tabular}
 
-{\sl Bachelor of Science,} Interdisciplinary Science \\
-Rensselaer Polytechnic Institute, Troy, NY, expected December 1990 \\
-Concentration: Computer Science \\
-Minor: Management 
- 
-%----------------------------------------------------------------------------------------
-%	COMPUTER SKILLS SECTION
-%----------------------------------------------------------------------------------------
+% \section{Competitions}
 
-\section{COMPUTER \\ SKILLS} 
+% \competition{14th National Electrical and Computer Engineering Conference} \hfill Apr 2023 \\
+% Won 1st place in the conference-wide programming competition.
 
-{\sl Languages \& Software:} 
-COBOL, IFPS, Focus, Megacalc, Pascal, Modula2, C, APL, SNOBOL, FORTRAN, LISP, SPIRES, BASIC, VSPC Autotab, IBM 370 Assembler, Lotus 1-2-3. \\
-{\sl Operating Systems:} MTS, TSO, Unix. 
- 
-%----------------------------------------------------------------------------------------
-%	PROFESSIONAL EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
- 
-\section{EXPERIENCE}
+% \competition{IEEEXtreme} \hfill 2019 --- 2022 \\
+% Annual international programming competition held by IEEE. \\ 
+% Ranked 14th in Greece, 91st in Europe.
 
-{\sl Business Applications Programmer} \hfill Fall 1990 \\
-Allied-Signal Bendix Friction Materials Division, Financial Planning Department, Latham, NY 
+% \section{Projects}
 
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item Developed four ``user friendly" forecasting systems each of which produces 18 to 139 individual reports. 
-\item Developed or improved almost all IFPS programs used for financial reports. 
-\end{itemize}
- 
-{\sl Research Programmer} \hfill Summer 1990 \\
-Psychology Department, Rensselaer Polytechnic Institute 
-\begin{itemize} 
-\item Performed computer aided statistical analysis of data. 
-\end{itemize} 
+% \project{myCharts --- Charts as a Service}{https://github.com/nikpag/myCharts} \hfill Spring 2023 \\
+% A Web application that allows creating a variety of charts out of CSV data. Built with Docker and Apache Kafka in order to provide seamless deployment and high scalability.
 
-{\sl Assistant Manager} \hfill Summers 1988-89 \\
-Thunder Restaurant, Canton, CT
-\begin{itemize}
-\item Recognized need for, developed, and wrote employee training manual. Performed various duties including cooking, employee training, ordering, and inventory control. 
-\end{itemize} 
+% \project{Mockchain}{https://github.com/nikpag/Mockchain} \hfill Fall 2022 \\
+% A Blockchain-based cryptocurrency system implemented in Go and deployed on the cloud.
 
-%----------------------------------------------------------------------------------------
-%	COMMUNITY SERVICE SECTION
-%---------------------------------------------------------------------------------------- 
+% \project{KBeans}{https://github.com/nikpag/KBeans} \hfill Fall 2022 \\
+% An implementation of the k-means algorithm in OpenMP, CUDA, and MPI. Accompanied by thorough benchmarking in order to compare the three programming models.
 
-\section{COMMUNITY \\ SERVICE}
+% \project{encryptIOn}{https://github.com/nikpag/encryptIOn} \hfill Fall 2021 \\
+% A terminal-based encrypted chat built with TCP/IP sockets for communication, cryptodev-linux for encryption, and virtIO for virtualization support.
 
-Organized and directed the 1988 and 1989 Grand Marshall Week \\
-``Basketball Marathon.'' A 24 hour charity event to benefit the Troy Boys Club. Over 250 people participated each year. 
+% \section{References}
 
-%----------------------------------------------------------------------------------------
-%	EXTRA-CURRICULAR ACTIVITIES SECTION
-%----------------------------------------------------------------------------------------
+% References provided upon request.
 
-\section{EXTRA-CURRICULAR \\ ACTIVITIES} 
+% \section{Seminars}
 
-Elected {\it House Manager}, Rho Phi Sorority \\
-Elected {\it Sports Chairman} \\
-Attended Krannet Leadership Conference \\
-Headed delegation to Rho Phi Congress \\
-Junior varsity basketball team \\
-Participant, seven intramural athletic teams 
+% \seminar{Mega-ACE Blockchain Seminar} \hfill 2023 \\
+% Attended lectures and workshops on blockchain, cryptography, and smart contracts.
+% Seminar co-organized by Purdue University (Prof. V. Zikas) and the National Technical University of Athens (Prof. A. Pagourtzis).
 
-%----------------------------------------------------------------------------------------
+
+% \section{Talks}
+
+% \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Apr 2024 \\
+% \event{PaSh Retreat 2024} \hfill Brown University 
+
+% \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Feb 2024 \\
+% \event{Sysread Seminar} \hfill Brown University
+
+% \talk{\splash: Scaling Out Shell Scripts Using Serverless} \hfill Nov 2023 \\
+% \event{Sysread Seminar} \hfill Brown University
+
+% \talk{\splash: Towards Serverless Shell Scripting} \hfill Oct 2023 \\
+% \event{3rd \textsc{PaSh} Workshop} \hfill Brown University 
+
+% \section{Updated}
+
+% \today
 
 \end{resume}
+
 \end{document}
