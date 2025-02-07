@@ -25,13 +25,14 @@ anchorcolor = blue]{hyperref}
 \newcommand{\todo}[1]{\stepcounter{todo}\textbf{\textcolor{red}{[TODO \#\arabic{todo}: #1]}}}
 
 %%% Definitions
-\newcommand{\titleName}{\Huge Nikos Pagonas}
 \newcommand{\cvName}{Nikos Pagonas}
 \newcommand{\email}{nikospagonas00@gmail.com}
+\newcommand{\pash}{\textsc{PaSh}}
+\newcommand{\sectionVSpace}{\vspace{-3.5ex}} % Same as the \sectionskip value in the "resume.cls" file
+\newcommand{\splash}{\textsc{SPLaSh}\xspace}
+\newcommand{\titleName}{\Huge Nikos Pagonas}
 \newcommand{\website}{nikpag.github.io}
 \newcommand{\websiteLink}{https://\website}
-\newcommand{\splash}{\textsc{SPLaSh}\xspace}
-\newcommand{\sectionVSpace}{\vspace{-3.5ex}} % Same as resume.cls \sectionskip
 
 %%% Macros
 \newcommand{\authors}[1]{#1\xspace}
@@ -94,7 +95,7 @@ anchorcolor = blue]{hyperref}
     \institution{Brown University} \hfill \interval{Sep 2023}{May 2024} \\
     \role{Student Researcher} \hfill \place{Providence, RI, US} \\
     \stitle{Advisor} Prof. Nikos Vasilakis \\
-    Worked on improving the performance of shell scripts by running them on serverless infrastructure, and providing fault tolerance for distributed shell script execution. \\
+    Contributed to \pash, an open-source Linux Foundation project. Worked on improving the performance of shell scripts by running them on serverless infrastructure, and providing fault tolerance for distributed shell script execution. \\
 
     \institution{National Technical University of Athens} \hfill \interval{Oct 2022}{Sep 2023} \\
     \role{Technical Support} \hfill \place{Athens, Greece} \\
@@ -176,7 +177,7 @@ anchorcolor = blue]{hyperref}
     \rSection{Talks}
 
     % \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Apr 2024 \\
-    % \event{PaSh Retreat 2024} \hfill Brown University \\
+    % \event{\pash Retreat 2024} \hfill Brown University \\
 
     \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Feb 2024 \\
     \event{Sysread Seminar} \hfill Brown University \\
@@ -185,7 +186,7 @@ anchorcolor = blue]{hyperref}
     % \event{Sysread Seminar} \hfill Brown University \\
 
     \talk{\splash: Towards Serverless Shell Scripting} \hfill Oct 2023 \\
-    \event{3\ordinal{rd} \textsc{PaSh} Workshop} \hfill Brown University \\
+    \event{3\ordinal{rd} \pash Workshop} \hfill Brown University \\
 
     \rSection{Competitions}
 
