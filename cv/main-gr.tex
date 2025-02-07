@@ -1,0 +1,247 @@
+\documentclass[margin, 12pt]{resume} 
+
+%%% Packages
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\usepackage{xspace}
+\usepackage{array}
+\usepackage{enumitem}
+
+%%% Package options
+\setromanfont[Scale=MatchLowercase]{Minion Pro}
+\setsansfont[Scale=MatchLowercase]{Myriad Pro}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\setmathfont[Scale=MatchLowercase]{Libertinus Math}
+\setlist[itemize]{topsep=1ex, left=0em, labelsep=0.5em}
+
+%%% Annotations
+\newcounter{todo}
+\setcounter{todo}{0}
+\newcommand{\todo}[1]{\stepcounter{todo}\textbf{\textcolor{red}{[TODO \#\arabic{todo}: #1]}}}
+
+%%% Definitions
+\newcommand{\titleName}{\Huge Νίκος Παγώνας}
+\newcommand{\cvName}{Νίκος Παγώνας}
+\newcommand{\email}{nikospagonas00@gmail.com}
+\newcommand{\website}{nikpag.github.io}
+\newcommand{\websiteLink}{https://\website}
+\newcommand{\splash}{\textsc{SPLaSh}\xspace}
+\newcommand{\sectionVSpace}{\vspace{-3.5ex}} % Same as resume.cls \sectionskip
+
+%%% Macros
+\newcommand{\authors}[1]{#1\xspace}
+\newcommand{\competition}[1]{\textbf{#1}\xspace}
+\newcommand{\cvBullet}{\textbullet\xspace}
+\newcommand{\degree}[1]{\textit{#1}\xspace}
+\newcommand{\equalContributionNote}{(*ίση συνεισφορά)\xspace}
+\newcommand{\event}[1]{\textit{#1}\xspace}
+\newcommand{\fellowship}[1]{\textbf{#1}\xspace}
+\newcommand{\institution}[1]{\textbf{#1}\xspace}
+\newcommand{\interval}[2]{#1 --- #2\xspace}
+\newcommand{\ordinal}[1]{\textsuperscript{#1}\xspace}
+\newcommand{\rSection}[1]{\sectionVSpace\section{#1}\xspace}
+\newcommand{\paperTitle}[1]{\textbf{#1}\xspace}
+\newcommand{\place}[1]{#1\xspace}
+\newcommand{\project}[2]{\textbf{\href{#2}{#1}}}
+\newcommand{\role}[1]{\textit{#1}\xspace}
+\newcommand{\seminar}[1]{\textbf{#1}\xspace}
+\newcommand{\service}[1]{\textbf{#1}\xspace}
+\newcommand{\stitle}[1]{#1:\xspace}
+\newcommand{\talk}[1]{\textbf{#1}\xspace}
+\newcommand{\thesisTitle}[1]{\textit{``#1''}\xspace}
+\newcommand{\underSubmission}{\textit{(Υπό υποβολή)}\xspace}
+\newcommand{\venue}[1]{\textit{#1}\xspace}
+
+%%% Options
+\setlength{\textwidth}{5.1in} 
+\setlength{\parskip}{0ex}
+
+\begin{document}
+
+\moveleft.5\hoffset\centerline{\large\bf \titleName}
+
+\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
+
+\begin{resume}
+
+    \rSection{Επικοινωνία}
+
+    Ηλ. ταχυδρομείο: \href{mailto:\email}{\email} --- Ιστοσελίδα: \href{https://\websiteLink}{\website} \\
+
+    \rSection{Εκπαίδευση}
+
+    \institution{Πανεπιστήμιο Columbia} \hfill \interval{Σεπτ 2024}{Σήμερα} \\
+    \degree{Διδακτορικό στην Πληροφορική} \hfill \place{Νέα Υόρκη, ΗΠΑ} \\
+    \stitle{Επιβλέπων} Καθ. Κωστής Καφφές \\
+    \stitle{Βαθμολογία (τρέχουσα)} \( 4.0 / 4.0 \) \\
+    Εργάζομαι στην ανάπτυξη νέων συστημάτων για την υποστήριξη LLM agents. \\
+
+
+    \institution{Εθνικό Μετσόβιο Πολυτεχνείο (ΕΜΠ)} \hfill \interval{Οκτ 2018}{Ιουν 2024} \\
+    \degree{Δίπλωμα Ηλεκτρολόγου Μηχ. και Μηχ. Υπολογιστών} \hfill \place{Αθήνα, Ελλάδα} \\
+    \stitle{Κατεύθυνση} Πληροφορικής \\
+    \stitle{Επιβλέποντες} Καθ. Νίκος Βασιλάκης (Brown), Καθ. Γεώργιος Γκούμας (ΕΜΠ) \\
+    \stitle{Βαθμολογία} \( 9.39 / 10.00 \) (14\ordinal{ος} από 344 φοιτητές) \\
+    \stitle{Διπλ. Εργασία} \thesisTitle{\splash: Scaling Out Shell Scripts on Serverless Platforms} \\
+    % \stitle{Related courses} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks \\
+
+    \rSection{Εμπειρία}
+
+    \institution{Πανεπιστήμιο Brown} \hfill \interval{Σεπτ 2023}{Μαϊ 2024} \\
+    \role{Επισκέπτης Ερευνητής} \hfill \place{Providence, Rhode Island, ΗΠΑ} \\
+    \stitle{Επιβλέπων} Καθ. Νίκος Βασιλάκης \\
+    Εργάστηκα στην βελτίωση της επίδοσης των προγραμμάτων shell μέσω της εκτέλεσης τους σε serverless υποδομές, καθώς και στην παροχή μηχανισμών ανοχής σφαλμάτων για την κατανεμημένη εκτέλεση προγραμμάτων shell. \\
+
+    \institution{Εθνικό Μετσόβιο Πολυτεχνείο} \hfill \interval{Οκτ 2022}{Σεπτ 2023} \\
+    \role{Τεχνική Υποστήριξη} \hfill \place{Αθήνα, Ελλάδα} \\
+    \stitle{Επιβλέποντες} Καθ. Παναγιώτης Τσανάκας, Καθ. Ευστάθιος Συκάς \\
+    Παρείχα τεχνική υποστήριξη για την υποδομή νέφους OpenStack του ΕΜΠ, καθώς και για την πλατφόρμα ηλεκτρονικής μάθησης που χρησιμοποιήθηκε και από τα εννέα τμήματα του πανεπιστημίου. \\
+
+    \institution{Arrikto Inc.} \hfill \interval{Δεκ 2022}{Μαρ 2023} \\
+    \role{Μηχανικός Λογισμικού (Πρακτική Άσκηση)} \hfill \place{Αθήνα, Ελλάδα} \\
+    Ερεύνησα πώς η εταιρεία μπορεί να εξυπηρετήσει μοντέλα μηχανικής μάθησης πιο αποδοτικά μέσω του KServe, μίας πλατφόρμας για την φόρτωση μοντέλων μηχανικής μάθησης σε μεγάλη κλίμακα μέσω Kubernetes. \\
+
+    % \rSection{Βραβεία}
+
+    % \fellowship{Προεδρική Υποτροφία Πανεπιστημίου Columbia} \hfill 2024 \\
+
+    \rSection{Δημοσιεύσεις}
+
+    \newcommand{\me}{\textbf{\cvName}\xspace}
+
+    \paperTitle{007: Agent-First Systems} \\
+    \underSubmission \\
+    % \authors{Jiaxiang Liu*, \me{}*, Haonan Wang*, Eugene Wu, Kostis Kaffes, Anirudh Sivaraman, Zhou Yu, Deepak Dastrala, Raman Jatkar \equalContributionNote} \\ 
+    % \venue{20\ordinal{th} Workshop on Hot Topics in Operating Systems (HotOS 2025)} \\
+
+    \paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Recoverable Serverless Computing} \\
+    \underSubmission \\
+    % \authors{Yizheng Xie, \me, Yuchen Lu, Yu Nie, Haoran Zhang, Konstantinos Kallas, Nikos Vasilakis} \\
+    % \venue{2025 USENIX Annual Technical Conference (ATC `25)} \\
+
+    \paperTitle{Fractal: Fault-Tolerant Shell-Script Distribution} \\
+    \underSubmission \\
+    % \authors{Ramiz Dundar*, Zhicheng Huang*, Yizheng Xie, \me, Konstantinos Kallas, Nikos Vasilakis \equalContributionNote} \\
+    % \venue{19\ordinal{th} USENIX Symposium on Operating Systems Design and Implementation (OSDI `25)} \\
+
+    \rSection{Ακαδημαϊκή Υπηρεσία}
+
+    \service{17\ordinal{th} European Workshop on Systems Security (EuroSec 2024)} \hfill 2024 \\
+    \role{Web and Publication Chair} \\
+
+    \rSection{Διδασκαλία}
+
+    \institution{Πανεπιστήμιο Columbia} \hfill Άνοιξη 2025 \\
+    \role{Βοηθός Διδασκαλίας} \hfill Νέα Υόρκη, ΗΠΑ \\
+    \stitle{Μάθημα} Agentic Systems Made Real \\
+    \stitle{Καθηγητές} Κωστής Καφφές, Eugene Wu \\
+
+    \institution{Πανεπιστήμιο Brown} \hfill Φθινόπωρο 2024 \\
+    \role{Βοηθός Διδασκαλίας} \hfill Providence, Rhode Island, ΗΠΑ \\
+    \stitle{Μάθημα} Systems Transforming Systems \\
+    \stitle{Καθηγητής} Νίκος Βασιλάκης \\
+    Καθοδήγησα ομάδα προπτυχιακών φοιτητών στην υλοποίηση, αξιολόγηση, και συγγραφή ερευνητικής εργασίας στον τομέα των υπολογιστικών συστημάτων. Η εργασία υποβλήθηκε στο USENIX ATC `25. \\
+
+    \institution{Πανεπιστήμιο Brown} \hfill Άνοιξη 2024 \\
+    \role{Βοηθός Διδασκαλίας} \hfill Providence, Rhode Island, ΗΠΑ \\
+    \stitle{Μάθημα} Distributed Systems \\
+    \stitle{Καθηγητής} Νίκος Βασιλάκης \\
+    Βοήθησα στην αναδιαμόρφωση του μαθήματος μέσω του ανασχεδιασμού της εξαμηνιαίας εργασίας και της υλοποίησης υποδομής αυτόματης αξιολόγησης των εργασιών. \\
+
+    \institution{Εθνικό Μετσόβιο Πολυτεχνείο} \hfill Άνοιξη 2022 \\
+    \role{Βοηθός Εργαστηρίου} \hfill Αθήνα, Ελλάδα \\
+    \stitle{Μάθημα} Λειτουργικά Συστήματα \\
+    \stitle{Καθηγητές} Νεκτάριος Κοζύρης, Γεώργιος Γκούμας \\
+
+    \institution{Εθνικό Μετσόβιο Πολυτεχνείο} \hfill Άνοιξη 2020 \\
+    \role{Βοηθός Εργαστηρίου} \hfill Αθήνα, Ελλάδα \\
+    \stitle{Μάθημα} Προγραμματιστικές Τεχνικές \\
+    \stitle{Καθηγητές} Ν. Παπασπύρου, Α. Παγουρτζής, Γ. Στάμου, Γ. Γκούμας \\
+
+    \institution{Εθνικό Μετσόβιο Πολυτεχνείο} \hfill Φθινόπωρο 2019 \\
+    \role{Βοηθός Εργαστηρίου} \hfill Αθήνα, Ελλάδα \\
+    \stitle{Μάθημα} Εισαγωγή στον Προγραμματισμό \\
+    \stitle{Καθηγητές} Νικόλαος Παπασπύρου, Δημήτρης Φωτάκης, Στάθης Ζάχος \\
+
+    \rSection{Εθελοντισμός}
+
+    \institution{Seed Robotics} \hfill Οκτ 2022 --- Ιουν 2023 \\
+    \role{Δάσκαλος Ρομποτικής} \hfill Αθήνα, Ελλάδα \\
+    Καθοδήγησα ομάδα μαθητών στην κατασκευή και τον προγραμματισμό μίας σειράς από εργασίες ρομποτικής. Υπηρέτησα ως συντονιστής και ηγέτης της ομάδας ρομποτικής του σχολείου στο ετήσιο δημοτικό φεστιβάλ επιστήμης, τεχνών, και αθλητισμού. \\
+
+    \rSection{Ομιλίες}
+
+    % \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Απρ 2024 \\
+    % \event{PaSh Retreat 2024} \hfill Πανεπιστήμιο Brown \\
+
+    \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Φεβ 2024 \\
+    \event{Sysread Seminar} \hfill Πανεπιστήμιο Brown \\
+
+    % \talk{\splash: Scaling Out Shell Scripts Using Serverless} \hfill Nov 2023 \\
+    % \event{Sysread Seminar} \hfill Πανεπιστήμιο Brown \\
+
+    \talk{\splash: Towards Serverless Shell Scripting} \hfill Οκτ 2023 \\
+    \event{3\ordinal{rd} \textsc{PaSh} Workshop} \hfill Πανεπιστήμιο Brown \\
+
+    \rSection{Διαγωνισμοί}
+
+    \competition{14\ordinal{ο} Συνέδριο Φοιτητών Ηλεκτρ. Μηχ. και Μηχ. Υπολογιστών} \hfill Απρ 2023 \\
+    Κατέκτησα την 1\ordinal{η} θέση στον διαγωνισμό προγραμματισμού του συνεδρίου. \\
+
+    \competition{IEEEXtreme} \hfill 2019 --- 2022 \\
+    Ετήσιος διεθνής διαγωνισμός προγραμματισμού του IEEE. \\
+    Κατέκτησα την 14\ordinal{η} θέση στην Ελλάδα και την 91\ordinal{η} στην Ευρώπη. \\
+
+    \rSection{Δεξιότητες}
+
+    \begin{tabular}{@{} >{\bfseries}l l @{}}
+        Γλ. Προγραμματισμού & C, Python, Javascript, Shell, Java, Go              \\
+        Πλατφόρμες          & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
+        Εργαλεία            & Git, LaTeX
+    \end{tabular}
+
+    \vspace{1ex}
+
+    \section{Γλώσσες}
+
+    \begin{tabular}{@{} >{\bfseries}l l @{}}
+        Αγγλικά  & Άριστο επίπεδο --- TOEFL iBT \( 116/120 \) (C2) \\
+        Ελληνικά & Μητρική γλώσσα                                  \\
+    \end{tabular}
+
+    % \rSection{Projects}
+
+    % \project{myCharts --- Charts as a Service}{https://github.com/nikpag/myCharts} \hfill Spring 2023 \\
+    % A Web application that allows creating a variety of charts out of CSV data. Built with Docker and Apache Kafka in order to provide seamless deployment and high scalability. \\
+
+    % \project{Mockchain}{https://github.com/nikpag/Mockchain} \hfill Fall 2022 \\
+    % A Blockchain-based cryptocurrency system implemented in Go and deployed on the cloud. \\
+
+    % \project{KBeans}{https://github.com/nikpag/KBeans} \hfill Fall 2022 \\
+    % An implementation of the k-means algorithm in OpenMP, CUDA, and MPI. Accompanied by thorough benchmarking in order to compare the three programming models. \\
+
+    % \project{encryptIOn}{https://github.com/nikpag/encryptIOn} \hfill Fall 2021 \\
+    % A terminal-based encrypted chat built with TCP/IP sockets for communication, cryptodev-linux for encryption, and virtIO for virtualization support. \\
+
+    % \rSection{References}
+
+    % References provided upon request. \\
+
+    % \rSection{Seminars}
+
+    % \seminar{Mega-ACE Blockchain Seminar} \hfill 2023 \\
+    % Attended lectures and workshops on blockchain, cryptography, and smart contracts. \\
+    % Seminar co-organized by Purdue University (Prof. V. Zikas) and the National Technical University of Athens (Prof. A. Pagourtzis). \\
+
+    % \rSection{Updated}
+
+    % \today
+
+\end{resume}
+
+\end{document}
