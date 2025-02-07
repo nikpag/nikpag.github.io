@@ -28,7 +28,7 @@ I received my Master's degree in [Electrical and Computer Engineering](https://w
 
 My research interests are in systems for machine learning, cloud computing, and distributed systems. Currently, I am working on:
 
--   Improving the performance of LLM inference systems
+-   Providing systems support for emerging LLM agent applications
 -   Accelerating shell scripts by automatically scaling them out to serverless infrastructure
 -   Providing fault tolerance for distributed shell script execution
 
