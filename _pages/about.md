@@ -22,7 +22,7 @@ social: true # includes social icons at the bottom of the page
 
 Hi! I am Nikos, a PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/) and member of the [Nebula](https://nebula-cu.github.io) Lab, advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
 
-I am also a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown CS](https://cs.brown.edu/), where I work on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+Before that, I was in the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown CS](https://cs.brown.edu/), where I worked on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
 I received my Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from the [National Technical University of Athens](https://www.ntua.gr/en/), where I was advised by Prof. [Georgios Goumas](http://www.cslab.ntua.gr/~goumas/).
 
