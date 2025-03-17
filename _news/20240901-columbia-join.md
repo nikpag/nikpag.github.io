@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I am starting my PhD in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/)!
+I started my PhD in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/)!

@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I have been awarded the [Columbia Presidential Fellowship](https://www.cs.columbia.edu/2024/meet-the-scholars-phd-students-with-prestigious-fellowships/)!
+I was awarded the [Columbia Presidential Fellowship](https://www.cs.columbia.edu/2024/meet-the-scholars-phd-students-with-prestigious-fellowships/)!

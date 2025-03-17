@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I am joining [Brown CS](https://cs.brown.edu/) as a Student Intern!
+I joined [Brown CS](https://cs.brown.edu/) as a Student Intern!
