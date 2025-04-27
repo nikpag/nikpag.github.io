@@ -1,13 +1,18 @@
-\documentclass[margin, 12pt]{resume} 
+\documentclass[margin,12pt]{resume} 
 
 %%% Packages
 \usepackage{fontspec}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{unicode-math}
+
+\newcommand{\linkColor}{NavyBlue}
+% \newcommand{\linkColor}{black}
+
 \usepackage[colorlinks = true,
-linkcolor = blue,
-urlcolor  = blue,
-citecolor = blue,
-anchorcolor = blue]{hyperref}
+linkcolor = \linkColor,
+urlcolor  = \linkColor,
+citecolor = \linkColor,
+anchorcolor = \linkColor]{hyperref}
 \usepackage{xspace}
 \usepackage{array}
 \usepackage{enumitem}
@@ -27,36 +32,51 @@ anchorcolor = blue]{hyperref}
 %%% Definitions
 \newcommand{\cvName}{Nikos Pagonas}
 \newcommand{\email}{nikospagonas00@gmail.com}
-\newcommand{\pash}{\textsc{PaSh}}
-\newcommand{\sectionVSpace}{\vspace{-3.5ex}} % Same as the \sectionskip value in the "resume.cls" file
+\newcommand{\descriptionVSpace}{\vspace{0.5ex}\xspace}
+\newcommand{\subsectionVSpace}{\vspace{3.5ex}\xspace}
+\newcommand{\sectionVSpace}{\vspace{1ex}\xspace} % Doesn't take into account the space already added by \subsectionVSpace
+\newcommand{\pash}{\textsc{PaSh}\xspace}
+\newcommand{\sectionVSpaceCorrection}{\vspace{-3.5ex}} % Same as the \sectionskip value in the "resume.cls" file
 \newcommand{\splash}{\textsc{SPLaSh}\xspace}
 \newcommand{\titleName}{\Huge Nikos Pagonas}
 \newcommand{\website}{nikpag.github.io}
 \newcommand{\websiteLink}{https://\website}
 
 %%% Macros
+\newcommand{\header}[1]{\textbf{#1}\xspace}
+
 \newcommand{\authors}[1]{#1\xspace}
-\newcommand{\competition}[1]{\textbf{#1}\xspace}
+\newcommand{\company}[1]{\header{#1}\xspace}
+\newcommand{\competition}[1]{\header{#1}\xspace}
 \newcommand{\cvBullet}{\textbullet\xspace}
 \newcommand{\degree}[1]{\textit{#1}\xspace}
 \newcommand{\equalContributionNote}{(*equal contribution)\xspace}
 \newcommand{\event}[1]{\textit{#1}\xspace}
-\newcommand{\fellowship}[1]{\textbf{#1}\xspace}
-\newcommand{\institution}[1]{\textbf{#1}\xspace}
+\newcommand{\fellowship}[1]{\header{#1}\xspace}
+\newcommand{\institution}[1]{\header{#1}\xspace}
 \newcommand{\interval}[2]{#1 --- #2\xspace}
+\newcommand{\me}{\textbf{\cvName}\xspace}
 \newcommand{\ordinal}[1]{\textsuperscript{#1}\xspace}
-\newcommand{\rSection}[1]{\sectionVSpace\section{#1}\xspace}
-\newcommand{\paperTitle}[1]{\textbf{#1}\xspace}
+\newcommand{\paperTitle}[1]{\header{#1}\xspace}
 \newcommand{\place}[1]{#1\xspace}
-\newcommand{\project}[2]{\textbf{\href{#2}{#1}}}
+\newcommand{\poster}[1]{\header{#1}\xspace}
+\newcommand{\project}[2]{\header{\href{#2}{#1}}}
 \newcommand{\role}[1]{\textit{#1}\xspace}
-\newcommand{\seminar}[1]{\textbf{#1}\xspace}
-\newcommand{\service}[1]{\textbf{#1}\xspace}
+\newcommand{\seminar}[1]{\header{#1}\xspace}
+\newcommand{\service}[1]{\header{#1}\xspace}
+\newcommand{\singleDate}[1]{#1\xspace}
 \newcommand{\stitle}[1]{#1:\xspace}
-\newcommand{\talk}[1]{\textbf{#1}\xspace}
+\newcommand{\talk}[1]{\header{#1}\xspace}
 \newcommand{\thesisTitle}[1]{\textit{``#1''}\xspace}
 \newcommand{\underSubmission}{\textit{(Under Submission)}\xspace}
 \newcommand{\venue}[1]{\textit{#1}\xspace}
+
+%%% Environments
+\newenvironment{rSubsection}{}{\par\subsectionVSpace} 
+\newenvironment{rSection}[1]{\sectionVSpaceCorrection\section{#1}\xspace}{\sectionVSpace\par}
+\newenvironment{jobDuties}{\descriptionVSpace}{\par}
+\newenvironment{projectDescription}{\descriptionVSpace}{\par}
+\newenvironment{seminarDescription}{\descriptionVSpace}{\par}
 
 %%% Options
 \setlength{\textwidth}{5.1in} 
@@ -69,180 +89,368 @@ anchorcolor = blue]{hyperref}
 \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
 
 \begin{resume}
+    \begin{rSection}{Contact}
+        \begin{rSubsection}
+            Email: \href{mailto:\email}{\email} --- Website: \href{https://\websiteLink}{\website}
+        \end{rSubsection}
+    \end{rSection}
 
-    \rSection{Contact}
+    \begin{rSection}{Education}
+        \begin{rSubsection}
+            \institution{Columbia University} \hfill \interval{Sep 2024}{Present}
 
-    Email: \href{mailto:\email}{\email} --- Website: \href{https://\websiteLink}{\website} \\
+            \degree{PhD in Computer Science} \hfill \place{New York, NY, US}
 
-    \rSection{Education}
+            \stitle{Advisor} Prof. \href{https://www.cs.columbia.edu/~kkaffes/index.html}{Kostis Kaffes}
 
-    \institution{Columbia University} \hfill \interval{Sep 2024}{Present} \\
-    \degree{PhD in Computer Science} \hfill \place{New York, NY, US} \\
-    \stitle{Advisor} Prof. Kostis Kaffes \\
-    \stitle{GPA (current)} \( 4.0 / 4.0 \) \\
-    Working on providing systems support for emerging LLM agent applications. \\
+            \stitle{GPA (current)} \( 4.0 / 4.0 \)
 
-    \institution{National Technical University of Athens (NTUA)} \hfill \interval{Oct 2018}{Jun 2024} \\
-    \degree{Master of Electrical and Computer Engineering} \hfill \place{Athens, Greece} \\
-    % \stitle{Specialization} Computer Science \\
-    \stitle{Advisors} Prof. Nikos Vasilakis (Brown), Prof. Georgios Goumas (NTUA) \\
-    \stitle{GPA} \( 9.39 / 10.00 \) (14\ordinal{th} out of 344 students) \\
-    \stitle{Thesis} \thesisTitle{\splash: Scaling Out Shell Scripts on Serverless Platforms} \\
-    % \stitle{Related courses} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks \\
+            \begin{jobDuties}
+                Member of \href{https://daplab.cs.columbia.edu/}{DAPLab}. 
+                Working on providing systems support for emerging LLM agent applications.
+            \end{jobDuties}
+        \end{rSubsection}
 
-    \rSection{Experience}
+        \begin{rSubsection}
+            \institution{National Technical University of Athens (NTUA)} \hfill \interval{Oct 2018}{Jun 2024}
 
-    \institution{Brown University} \hfill \interval{Sep 2023}{May 2024} \\
-    \role{Student Researcher} \hfill \place{Providence, RI, US} \\
-    \stitle{Advisor} Prof. Nikos Vasilakis \\
-    Contributed to \pash, an open-source Linux Foundation project. Worked on improving the performance of shell scripts by running them on serverless infrastructure, and providing fault tolerance for distributed shell script execution. \\
+            \degree{Master of Electrical and Computer Engineering} \hfill \place{Athens, Greece}
 
-    % \institution{National Technical University of Athens} \hfill \interval{Oct 2022}{Sep 2023} \\
-    % \role{Technical Support} \hfill \place{Athens, Greece} \\
-    % \stitle{Supervisors} Prof. Panayiotis Tsanakas, Prof. Efstathios Sykas \\
-    % Provided technical support for the university's OpenStack cloud infrastructure and coursework platform, both used extensively by all nine departments. \\
+            % \stitle{Specialization} Computer Science 
 
-    \institution{Arrikto Inc.} \hfill \interval{Dec 2022}{Mar 2023} \\
-    \role{Software Engineering Intern} \hfill \place{Athens, Greece} \\
-    Explored how to serve PyTorch models more efficiently through KServe, a highly scalable machine learning deployment platform for Kubernetes. \\
+            \stitle{Advisors} Prof. \href{https://nikos.vasilak.is}{Nikos Vasilakis} (Brown), Prof. \href{http://www.cslab.ntua.gr/~goumas/}{Georgios Goumas} (NTUA)
 
-    \rSection{Awards}
+            \stitle{GPA} \( 9.39 / 10.00 \) (14\ordinal{th} out of 344 students)
 
-    \fellowship{Columbia University Presidential Fellowship} \hfill 2024 \\
+            \begin{jobDuties}
+                \stitle{Thesis} \thesisTitle{\splash: Scaling Out Shell Scripts on Serverless Platforms}
+            \end{jobDuties}
 
-    \rSection{Publications}
+            % \stitle{Related courses} Distributed Systems, Parallel Processing, Operating Systems, Computer Networks 
+        \end{rSubsection}
+    \end{rSection}
 
-    \newcommand{\me}{\textbf{\cvName}\xspace}
+    \begin{rSection}{Experience}
+        \begin{rSubsection}
+            \company{Google} \hfill \interval{May 2025}{Present}
 
-    \paperTitle{007: Agent-First Systems} \\
-    \underSubmission \\
-    % \authors{Jiaxiang Liu*, \me{}*, Haonan Wang*, Eugene Wu, Kostis Kaffes, Anirudh Sivaraman, Zhou Yu, Deepak Dastrala, Raman Jatkar \equalContributionNote} \\ 
-    % \venue{20\ordinal{th} Workshop on Hot Topics in Operating Systems (HotOS 2025)} \\
+            \role{Student Researcher} \hfill \place{Sunnyvale, CA, US}
 
-    \paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Recoverable Serverless Computing} \\
-    \underSubmission \\
-    % \authors{Yizheng Xie, \me, Yuchen Lu, Yu Nie, Haoran Zhang, Konstantinos Kallas, Nikos Vasilakis} \\
-    % \venue{2025 USENIX Annual Technical Conference (ATC `25)} \\
+            % \stitle{Supervisor} Kan Wu 
 
-    \paperTitle{Fractal: Fault-Tolerant Shell-Script Distribution} \\
-    \underSubmission \\
-    % \authors{Ramiz Dundar*, Zhicheng Huang*, Yizheng Xie, \me, Konstantinos Kallas, Nikos Vasilakis \equalContributionNote} \\
-    % \venue{19\ordinal{th} USENIX Symposium on Operating Systems Design and Implementation (OSDI `25)} \\
+            \begin{jobDuties}
+                Working on accelerating LLM inference for agentic workloads.
+            \end{jobDuties}
+        \end{rSubsection}
 
-    \rSection{Service}
+        \begin{rSubsection}
+            \company{Brown University} \hfill \interval{Sep 2023}{May 2024}
 
-    \service{17\ordinal{th} European Workshop on Systems Security (EuroSec 2024)} \hfill 2024 \\
-    \role{Web and Publication Chair} \\
+            \role{Student Researcher} \hfill \place{Providence, RI, US}
 
-    \rSection{Teaching}
+            \stitle{Advisor} Prof. \href{https://nikos.vasilak.is}{Nikos Vasilakis}
 
-    \institution{Columbia University} \hfill Spring 2025 \\
-    \role{Teaching Assistant} \hfill New York, NY, US \\
-    \stitle{Course} Agentic Systems Made Real \\
-    \stitle{Professors} Kostis Kaffes, Eugene Wu \\
+            \begin{jobDuties}
+                Contributed to \href{https://binpa.sh}{\pash}, an open-source \href{https://www.linuxfoundation.org/press/press-release/linux-foundation-to-host-the-pash-project-accelerating-shell-scripting-with-automated-parallelization-for-industrial-use-cases}{Linux Foundation} project. 
+                Worked on improving the performance of shell scripts by running them on serverless infrastructure, and providing fault tolerance for distributed shell script execution.
+            \end{jobDuties}
+        \end{rSubsection}
 
-    \institution{Brown University} \hfill Fall 2024 \\
-    \role{Project Shepherd} \hfill Providence, RI, US \\
-    \stitle{Course} Systems Transforming Systems \\
-    \stitle{Professor} Nikos Vasilakis \\
-    Guided students through a systems research project, including implementation, evaluation, and paper writing. Paper submitted to USENIX ATC `25. \\
+        % \begin{rSubsection}
+        % \company{National Technical University of Athens} \hfill \interval{Oct 2022}{Sep 2023} 
 
-    \institution{Brown University} \hfill Spring 2024 \\
-    \role{Teaching Assistant} \hfill Providence, RI, US \\
-    \stitle{Course} Distributed Systems \\
-    \stitle{Professor} Nikos Vasilakis \\
-    Helped revamp the course by redesigning its semester-long project and implementing its autograding infrastructure from scratch. \\
+        % \role{Technical Support} \hfill \place{Athens, Greece} 
 
-    \institution{National Technical University of Athens} \hfill Spring 2022 \\
-    \role{Lab Assistant} \hfill Athens, Greece \\
-    \stitle{Course} Operating Systems \\
-    \stitle{Professors} Nectarios Koziris, Georgios Goumas \\
+        % \stitle{Supervisors} Prof. Panayiotis Tsanakas, Prof. Efstathios Sykas 
 
-    \institution{National Technical University of Athens} \hfill Spring 2020 \\
-    \role{Lab Assistant} \hfill Athens, Greece \\
-    \stitle{Course} Programming Techniques \\
-    \stitle{Professors} N. Papaspyrou, A. Pagourtzis, G. Stamou, G. Goumas \\
+        % \begin{jobDuties}
+        %     Provided technical support for the university's OpenStack cloud infrastructure and coursework platform, both used extensively by all nine departments.
+        % \end{jobDuties}
+        % \end{rSubsection}
 
-    \institution{National Technical University of Athens} \hfill Fall 2019 \\
-    \role{Lab Assistant} \hfill Athens, Greece \\
-    \stitle{Course} Introduction to Programming \\
-    \stitle{Professors} Nikolaos Papaspyrou, Dimitris Fotakis, Stathis Zachos \\
+        \begin{rSubsection}
+            \company{Arrikto Inc.} \hfill \interval{Dec 2022}{Mar 2023}
 
-    \rSection{Volunteering}
+            \role{Software Engineering Intern} \hfill \place{Athens, Greece}
 
-    \institution{Seed Robotics} \hfill Oct 2022 --- Jun 2023 \\
-    \role{Robotics Instructor} \hfill Athens, Greece \\
-    Guided school students through construction and programming of a series of robotics projects. Served as coordinator and leader of the school robotics team in the annual municipal festival on science, arts, and sports. \\
-
-    % \rSection{Talks}
-
-    % \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Apr 2024 \\
-    % \event{\pash Retreat 2024} \hfill Brown University \\
-
-    % \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill Feb 2024 \\
-    % \event{Sysread Seminar} \hfill Brown University \\
-
-    % \talk{\splash: Scaling Out Shell Scripts Using Serverless} \hfill Nov 2023 \\
-    % \event{Sysread Seminar} \hfill Brown University \\
-
-    % \talk{\splash: Towards Serverless Shell Scripting} \hfill Oct 2023 \\
-    % \event{3\ordinal{rd} \pash Workshop} \hfill Brown University \\
-
-    % \rSection{Competitions}
-
-    % \competition{14\ordinal{th} National Electrical and Computer Engineering Conference} \hfill Apr 2023 \\
-    % Won 1\ordinal{st} place in the conference-wide programming competition. \\
-
-    % \competition{IEEEXtreme} \hfill 2019 --- 2022 \\
-    % Annual international programming competition held by IEEE. \\
-    % Ranked 14\ordinal{th} in Greece, 91\ordinal{st} in Europe. \\
-
-    \rSection{Skills}
-
-    \begin{tabular}{@{} >{\bfseries}l l @{}}
-        Prog. Languages & C, Python, Javascript, Shell, Java, Go              \\
-        Platforms       & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
-        Tools           & Git, LaTeX
-    \end{tabular}
-
-    \vspace{1ex}
-
-    \section{Languages}
-
-    \begin{tabular}{@{} >{\bfseries}l l @{}}
-        English & Fluent --- TOEFL iBT \( 116/120 \) (C2) \\
-        Greek   & Native                                  \\
-    \end{tabular}
+            \begin{jobDuties}
+                Explored how to serve PyTorch models more efficiently through KServe, a highly scalable machine learning deployment platform for Kubernetes.
+            \end{jobDuties}
+        \end{rSubsection}
+    \end{rSection}
 
 
-    % \rSection{Projects}
+    \begin{rSection}{Awards}
+        \begin{rSubsection}
+            \fellowship{\href{https://www.cs.columbia.edu/2024/meet-the-scholars-phd-students-with-prestigious-fellowships/}{Columbia University Presidential Fellowship}} \hfill 2024
+        \end{rSubsection}
+    \end{rSection}
 
-    % \project{myCharts --- Charts as a Service}{https://github.com/nikpag/myCharts} \hfill Spring 2023 \\
-    % A Web application that allows creating a variety of charts out of CSV data. Built with Docker and Apache Kafka in order to provide seamless deployment and high scalability. \\
+    \begin{rSection}{Publications}
+        \begin{rSubsection}
+            \paperTitle{007: Agent-First Systems}
 
-    % \project{Mockchain}{https://github.com/nikpag/Mockchain} \hfill Fall 2022 \\
-    % A Blockchain-based cryptocurrency system implemented in Go and deployed on the cloud. \\
+            \underSubmission
 
-    % \project{KBeans}{https://github.com/nikpag/KBeans} \hfill Fall 2022 \\
-    % An implementation of the k-means algorithm in OpenMP, CUDA, and MPI. Accompanied by thorough benchmarking in order to compare the three programming models. \\
+            % \authors{Jiaxiang Liu*, \me{}*, Haonan Wang*, Eugene Wu, Kostis Kaffes, Anirudh Sivaraman, Zhou Yu, Deepak Dastrala, Raman Jatkar \equalContributionNote} 
 
-    % \project{encryptIOn}{https://github.com/nikpag/encryptIOn} \hfill Fall 2021 \\
-    % A terminal-based encrypted chat built with TCP/IP sockets for communication, cryptodev-linux for encryption, and virtIO for virtualization support. \\
+            % \venue{20\ordinal{th} Workshop on Hot Topics in Operating Systems (HotOS 2025)} 
+        \end{rSubsection}
 
-    % \rSection{References}
+        \begin{rSubsection}
+            \paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Recoverable Serverless Computing}
 
-    % References provided upon request. \\
+            \underSubmission
 
-    % \rSection{Seminars}
+            % \authors{Yizheng Xie, \me, Yuchen Lu, Yu Nie, Haoran Zhang, Konstantinos Kallas, Nikos Vasilakis} 
 
-    % \seminar{Mega-ACE Blockchain Seminar} \hfill 2023 \\
-    % Attended lectures and workshops on blockchain, cryptography, and smart contracts. \\
-    % Seminar co-organized by Purdue University (Prof. V. Zikas) and the National Technical University of Athens (Prof. A. Pagourtzis). \\
+            % \venue{2025 USENIX Annual Technical Conference (ATC 2025)} 
+        \end{rSubsection}
 
-    % \rSection{Updated}
+        \begin{rSubsection}
+            \paperTitle{Fractal: Fault-Tolerant Shell-Script Distribution}
 
-    % \today
+            \underSubmission
+
+            % \authors{Ramiz Dundar*, Zhicheng Huang*, Yizheng Xie, \me, Konstantinos Kallas, Nikos Vasilakis \equalContributionNote} 
+
+            % \venue{19\ordinal{th} USENIX Symposium on Operating Systems Design and Implementation (OSDI 2025)} 
+        \end{rSubsection}
+    \end{rSection}
+
+    \begin{rSection}{Service}
+        \begin{rSubsection}
+            \service{19\ordinal{th} USENIX Symposium on Operating Systems Design and Implementation (OSDI 2025)} \hfill 2025
+
+            \role{\href{https://www.usenix.org/conference/osdi25}{Artifact Evaluation Committee}}
+        \end{rSubsection}
+
+        \begin{rSubsection}
+            \service{17\ordinal{th} European Workshop on Systems Security (EuroSec 2024)} \hfill 2024
+
+            \role{\href{https://secopera.eu/eurosec-2024/}{Web and Publication Chair}}
+        \end{rSubsection}
+    \end{rSection}
+
+    \begin{rSection}{Teaching}
+        \begin{rSubsection}
+            \institution{Columbia University} \hfill \singleDate{Spring 2025}
+
+            \role{Teaching Assistant} \hfill \place{New York, NY, US}
+
+            \stitle{Course} \href{https://w6113.github.io/}{Agentic Systems Made Real}
+
+            \stitle{Professors} \href{https://www.cs.columbia.edu/~kkaffes/index.html}{Kostis Kaffes}, \href{https://www.cs.columbia.edu/~ewu/}{Eugene Wu}
+        \end{rSubsection}
+
+        \begin{rSubsection}
+            \institution{Brown University} \hfill \singleDate{Fall 2024}
+
+            \role{Project Shepherd} \hfill \place{Providence, RI, US}
+
+            \stitle{Course} \href{https://cs.brown.edu/courses/csci2952r/}{Systems Transforming Systems}
+
+            \stitle{Professor} \href{https://nikos.vasilak.is}{Nikos Vasilakis}
+
+            \begin{jobDuties}
+                Guided students through a systems research project, including implementation, evaluation, and paper writing. 
+                Paper submitted to USENIX ATC 2025.
+            \end{jobDuties}
+        \end{rSubsection}
+
+        \begin{rSubsection}
+            \institution{Brown University} \hfill \singleDate{Spring 2024}
+
+            \role{Teaching Assistant} \hfill \place{Providence, RI, US}
+
+            \stitle{Course} \href{https://cs.brown.edu/courses/csci1380/s24/}{Systems Transforming Systems}
+
+            \stitle{Professor} \href{https://nikos.vasilak.is}{Nikos Vasilakis}
+
+            \begin{jobDuties}
+                Helped revamp the course by redesigning its semester-long project and implementing its autograding infrastructure from scratch.
+            \end{jobDuties}
+        \end{rSubsection}
+
+        \begin{rSubsection}
+            \institution{National Technical University of Athens} \hfill \singleDate{Spring 2022}
+
+            \role{Lab Assistant} \hfill \place{Athens, Greece}
+
+            \stitle{Course} Operating Systems
+
+            \stitle{Professors} \href{http://www.cslab.ntua.gr/~nkoziris/}{N. Koziris}, \href{http://www.cslab.ntua.gr/~goumas/}{G. Goumas}
+        \end{rSubsection}
+
+        \begin{rSubsection}
+            \institution{National Technical University of Athens} \hfill \singleDate{Spring 2020}
+
+            \role{Lab Assistant} \hfill \place{Athens, Greece}
+
+            \stitle{Course} Programming Techniques
+
+            \stitle{Professors} \href{http://www.softlab.ntua.gr/~nickie/}{N. Papaspyrou}, \href{http://users.softlab.ntua.gr/~pagour/}{A. Pagourtzis}, \href{http://www.image.ntua.gr/~gstam/}{G. Stamou}, \href{http://www.cslab.ntua.gr/~goumas/}{G. Goumas}
+        \end{rSubsection}
+
+        \begin{rSubsection}
+            \institution{National Technical University of Athens} \hfill \singleDate{Fall 2019}
+
+            \role{Lab Assistant} \hfill \place{Athens, Greece}
+
+            \stitle{Course} Introduction to Programming
+
+            \stitle{Professors} \href{http://www.softlab.ntua.gr/~nickie/}{N. Papaspyrou}, \href{http://www.softlab.ntua.gr/~fotakis/}{D. Fotakis}, \href{https://en.wikipedia.org/wiki/Stathis_Zachos}{S. Zachos}
+        \end{rSubsection}
+    \end{rSection}
+
+    \begin{rSection}{Posters}
+        \begin{rSubsection}
+            \poster{Bibarel: Accelerating Agentic Planning Through Dynamic Parallelism and Live Migration} \hfill Apr 2024
+
+            \event{\href{https://datascience.columbia.edu/event/data-science-day-2025/}{Data Science Day}} \hfill \place{Columbia University Data Science Institute}
+        \end{rSubsection}
+
+        \begin{rSubsection}
+            \poster{Bibarel: Accelerating Agentic Planning Through Dynamic Parallelism and Live Migration} \hfill Mar 2024
+
+            \event{\href{https://daplab.cs.columbia.edu/workshop/}{AI Agents for Work Workshop}} \hfill \place{Columbia Business School}
+        \end{rSubsection}
+    \end{rSection}
+
+    \begin{rSection}{Talks}
+        % \begin{rSubsection}
+        %     \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill \singleDate{Apr 2024}
+
+        %     \event{\pash Retreat 2024} \hfill \place{Brown University Data Science Institute}
+        % \end{rSubsection}
+
+        \begin{rSubsection}
+            \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill \singleDate{Feb 2024}
+
+            \event{Sysread Seminar} \hfill \place{Brown University}
+        \end{rSubsection}
+
+        % \begin{rSubsection}
+        %     \talk{\splash: Scaling Out Shell Scripts Using Serverless} \hfill \singleDate{Nov 2023}
+
+        %     \event{Sysread Seminar} \hfill \place{Brown University Data Science Institute}
+        % \end{rSubsection}
+
+        \begin{rSubsection}
+            \talk{\splash: Towards Serverless Shell Scripting} \hfill \singleDate{Oct 2023}
+
+            \event{3\ordinal{rd} \pash Workshop} \hfill \place{Brown University}
+        \end{rSubsection}
+    \end{rSection}
+
+    % \begin{rSection}{Competitions}
+    %     \begin{rSubsection}
+    %         \competition{14\ordinal{th} National Electrical and Computer Engineering Conference} \hfill \singleDate{Apr 2023}
+
+    %         \begin{jobDuties}
+    %             Won 1\ordinal{st} place in the conference-wide programming competition.
+    %         \end{jobDuties}
+    %     \end{rSubsection}
+
+    %     \begin{rSubsection}
+    %         \competition{IEEEXtreme} \hfill \interval{2019}{2022}
+
+    %         \begin{jobDuties}
+    %             Annual international programming competition held by IEEE. 
+    %             Ranked 14\ordinal{th} in Greece, 91\ordinal{st} in Europe.
+    %         \end{jobDuties}
+    %     \end{rSubsection}
+    % \end{rSection}
+
+    % \begin{rSection}{Projects}
+    %     \begin{rSubsection}
+    %         \project{myCharts --- Charts as a Service}{https://github.com/nikpag/myCharts} \hfill \singleDate{Spring 2023}
+
+    %         \begin{projectDescription}
+    %             A Web application that allows creating a variety of charts out of CSV data. 
+    %             Built with Docker and Apache Kafka in order to provide seamless deployment and high scalability.
+    %         \end{projectDescription}
+    %     \end{rSubsection}
+
+    %     \begin{rSubsection}
+    %         \project{Mockchain}{https://github.com/nikpag/Mockchain} \hfill \singleDate{Fall 2022}
+
+    %         \begin{projectDescription}
+    %             A Blockchain-based cryptocurrency system implemented in Go and deployed on the cloud.
+    %         \end{projectDescription}
+    %     \end{rSubsection}
+
+    %     \begin{rSubsection}
+    %         \project{KBeans}{https://github.com/nikpag/KBeans} \hfill \singleDate{Fall 2022}
+
+    %         \begin{projectDescription}
+    %             An implementation of the k-means algorithm in OpenMP, CUDA, and MPI. 
+    %             Accompanied by thorough benchmarking in order to compare the three programming models.
+    %         \end{projectDescription}
+    %     \end{rSubsection}
+
+    %     \begin{rSubsection}
+    %         \project{encryptIOn}{https://github.com/nikpag/encryptIOn} \hfill \singleDate{Fall 2021}
+
+    %         \begin{projectDescription}
+    %             A terminal-based encrypted chat built with TCP/IP sockets for communication, cryptodev-linux for encryption, and virtIO for virtualization support.
+    %         \end{projectDescription}
+    %     \end{rSubsection}
+    % \end{rSection}
+
+    % \begin{rSection}{Seminars}
+    %     \begin{rSubsection}
+    %         \seminar{Mega-ACE Blockchain Seminar} \hfill \singleDate{2023}
+
+    %         \begin{seminarDescription}
+    %             Attended lectures and workshops on blockchain, cryptography, and smart contracts. Seminar co-organized by Purdue University (Prof. V. Zikas) and the National Technical University of Athens (Prof. A. Pagourtzis).
+    %         \end{seminarDescription}
+    %     \end{rSubsection}
+    % \end{rSection}
+
+    \begin{rSection}{Volunteering}
+        \begin{rSubsection}
+            \institution{Seed Robotics} \hfill \interval{Oct 2022}{Jun 2023}
+
+            \role{Robotics Instructor} \hfill \place{Athens, Greece}
+
+            \begin{jobDuties}
+                Guided school students through construction and programming of a series of robotics projects. 
+                Served as coordinator and leader of the school robotics team in the annual municipal festival on science, arts, and sports.
+            \end{jobDuties}
+        \end{rSubsection}
+    \end{rSection}
+
+    \begin{rSection}{Skills}
+        \begin{rSubsection}
+            \begin{tabular}{@{} >{\bfseries}l l @{}}
+                Prog. Languages & C, Python, Javascript, Shell, Java, Go              \\
+                Platforms       & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
+                Tools           & Git, LaTeX
+            \end{tabular}
+        \end{rSubsection}
+    \end{rSection}
+
+    \begin{rSection}{Languages}
+        \begin{rSubsection}
+            \begin{tabular}{@{} >{\bfseries}l l @{}}
+                English & Fluent --- TOEFL iBT \( 116/120 \) (C2) \\
+                Greek   & Native                                  \\
+            \end{tabular}
+        \end{rSubsection}
+    \end{rSection}
+
+    % \begin{rSection}{References}
+    %     \begin{rSubsection}
+    %         References available upon request.
+    %     \end{rSubsection}
+    % \end{rSection}
+
+    % \begin{rSection}{Updated}
+    %     \begin{rSubsection}
+    %         \today
+    %     \end{rSubsection}
+    % \end{rSection}
 
 \end{resume}
-
 \end{document}
