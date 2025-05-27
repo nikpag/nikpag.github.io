@@ -6,7 +6,7 @@ subtitle: CS PhD Student @ Columbia University
 
 profile:
     align: right
-    image: profile.png
+    image: profile.jpeg
     image_circular: false # crops the image to make it circular
     address: >
         <p>CEPSR 6LW5</p>
