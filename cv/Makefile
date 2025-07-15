@@ -3,10 +3,8 @@
 export SHELL=/bin/bash
 
 FILE=main
-FILE_EN=main-en
-FILE_GR=main-gr
 
-all: $(FILE).pdf $(FILE_EN).pdf $(FILE_GR).pdf
+all: $(FILE).pdf
 
 # Using -shell-escape in `latexmk` commands
 # because of the package "minted" for typesetting

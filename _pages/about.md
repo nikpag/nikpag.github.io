@@ -20,16 +20,14 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi! I am Nikos, a PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/), where I am a member of the [Nebula](https://nebula-cu.github.io) Lab and [DAPLab](https://daplab.cs.columbia.edu), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
+Hi! I am Nikos, a PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/), where I am a member of [DAPLab](https://daplab.cs.columbia.edu), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
 
 Before that, I was in the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown CS](https://cs.brown.edu/), where I worked on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
 I received my Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from the [National Technical University of Athens](https://www.ntua.gr/en/), where I was advised by Prof. [Georgios Goumas](http://www.cslab.ntua.gr/~goumas/).
 
-My research interests are in systems for machine learning, cloud computing, and distributed systems. Currently, I am working on:
+Currently, I am working on AI systems: improving scheduling for agentic workflows, accelerating application-agnostic LLM serving, and providing efficient simulation support for agentic rollouts.
 
--   Providing systems support for emerging LLM agent applications
--   Accelerating shell scripts by automatically scaling them out to serverless infrastructure
--   Providing fault tolerance for distributed shell script execution
+In the past, I have worked on improving shell scripting performance: accelerating shell scripts by automatically scaling them out to serverless infrastructure, and providing fault tolerance for distributed shell script execution.
 
 In my free time, I hunt down concerts that convey a mix of proficiency and humanity, and test the patience of fellow concert-goers by air-drumming.
