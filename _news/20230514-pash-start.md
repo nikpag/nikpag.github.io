@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I started working on the [PaSh](https://binpa.sh/) Project!
+I started working on the [PaSh](https://binpa.sh/) project!

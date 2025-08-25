@@ -9,9 +9,9 @@ profile:
     image: profile.jpeg
     image_circular: false # crops the image to make it circular
     address: >
-        <p>CEPSR 6LW5</p>
+        <p>Mudd 425</p>
         <p>Columbia University</p>
-        <p>530 W. 120th St.</p>
+        <p>500 W 120th St</p>
         <p>New York, NY 10027</p>
 
 news: true # includes a list of news items
