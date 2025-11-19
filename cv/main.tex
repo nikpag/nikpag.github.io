@@ -1,4 +1,4 @@
-\documentclass[margin,11pt]{resume} 
+\documentclass[margin,12pt]{resume} 
 
 %%% Packages
 \usepackage{fontspec}
@@ -33,8 +33,13 @@ anchorcolor = \linkColor]{hyperref}
 \newcommand{\cvName}{Nikos Pagonas}
 \newcommand{\email}{nikospagonas00@gmail.com}
 \newcommand{\descriptionVSpace}{\vspace{0.5ex}\xspace}
-\newcommand{\subsectionVSpace}{\vspace{3.5ex}\xspace}
+\newcommand{\subsectionVSpace}{\vspace{4.5ex}\xspace}
 \newcommand{\sectionVSpace}{\vspace{1ex}\xspace} % Doesn't take into account the space already added by \subsectionVSpace
+\newcommand{\fellowshipVSpace}{\vspace{2ex}\xspace} % Vertical space between fellowship items
+\newcommand{\serviceVSpace}{\vspace{2ex}\xspace} % Vertical space between service items
+\newcommand{\publicationVSpace}{\vspace{3ex}\xspace} % Vertical space between publication items
+\newcommand{\teachingVSpace}{\vspace{3ex}\xspace} % Vertical space between teaching items
+\newcommand{\menteeVSpace}{\vspace{2.5ex}\xspace} % Vertical space between mentee items
 \newcommand{\pash}{\textsc{PaSh}\xspace}
 \newcommand{\sectionVSpaceCorrection}{\vspace{-3.5ex}} % Same as the \sectionskip value in the "resume.cls" file
 \newcommand{\splash}{\textsc{SPLaSh}\xspace}
@@ -54,8 +59,10 @@ anchorcolor = \linkColor]{hyperref}
 \newcommand{\event}[1]{\textit{#1}\xspace}
 \newcommand{\fellowship}[1]{\header{#1}\xspace}
 \newcommand{\institution}[1]{\header{#1}\xspace}
-\newcommand{\interval}[2]{#1 --- #2\xspace}
+\newcommand{\interval}[2]{#1 -- #2\xspace}
 \newcommand{\me}{\cvName\xspace}
+\newcommand{\mentee}[1]{\header{#1}\xspace}
+\newcommand{\menteePlace}[1]{\textit{#1}\xspace}
 \newcommand{\ordinal}[1]{\textsuperscript{#1}\xspace}
 \newcommand{\paperTitle}[1]{\header{#1}\xspace}
 \newcommand{\place}[1]{#1\xspace}
@@ -77,9 +84,52 @@ anchorcolor = \linkColor]{hyperref}
 \newenvironment{jobDuties}{\descriptionVSpace}{\par}
 \newenvironment{projectDescription}{\descriptionVSpace}{\par}
 \newenvironment{seminarDescription}{\descriptionVSpace}{\par}
+\newenvironment{fellowshipItem}{}{\par\fellowshipVSpace} % Less vertical space between fellowships
+\newenvironment{serviceItem}{}{\par\serviceVSpace} % Less vertical space between service items
+\newenvironment{publicationItem}{}{\par\publicationVSpace} % Less vertical space between publications
+\newenvironment{teachingItem}{}{\par\teachingVSpace} % Less vertical space between teaching items
+\newenvironment{menteeItem}{}{\par\menteeVSpace} % Less vertical space between mentees
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MARGIN SETTINGS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Options
-\setlength{\textwidth}{5.1in} 
+% Margin settings (adjust these to change left and right margins)
+% Standard US letter paper width is 8.5in
+\newlength{\cvleftmargin}
+\newlength{\cvrightmargin}
+\newlength{\cvsectionwidth}
+\setlength{\cvleftmargin}{0.98in}   % Left margin (default: 1.7in)
+\setlength{\cvrightmargin}{\cvleftmargin}  % Right margin (default: 1.7in)
+\setlength{\cvsectionwidth}{1.3in}  % Distance from section headers to text (default: 1.3in)
+
+% Apply margin settings after resume class initialization
+\AtBeginDocument{%
+  % Set LaTeX page geometry parameters
+  % LaTeX adds 1in by default, so we subtract it to get the desired left margin
+  \setlength{\oddsidemargin}{\cvleftmargin}%
+  \addtolength{\oddsidemargin}{-1in}%
+  \setlength{\evensidemargin}{\oddsidemargin}%
+  
+  % Calculate maximum available width for resume content
+  % Available width = paper width - left margin - right margin
+  \newlength{\availablewidth}%
+  \setlength{\availablewidth}{8.5in}%
+  \addtolength{\availablewidth}{-\cvleftmargin}%
+  \addtolength{\availablewidth}{-\cvrightmargin}%
+  
+  % The resume class structure: resumewidth = sectionwidth + textwidth
+  % We want the total resume width to fit within availablewidth
+  % So: resumewidth = availablewidth (or less)
+  \setlength{\resumewidth}{\availablewidth}%
+  
+  % Override the section width set by the resume class
+  % This calls \newsectionwidth which sets: sectionwidth, textwidth, hsize, and hoffset
+  \newsectionwidth{\cvsectionwidth}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setlength{\parskip}{0ex}
 
 \begin{document}
@@ -139,7 +189,8 @@ anchorcolor = \linkColor]{hyperref}
 			\stitle{Supervisor} Prof. \href{https://sites.google.com/cs.washington.edu/arvind}{Arvind Krishnamurthy}
 
 			\begin{jobDuties}
-				Worked on improving scheduling for agentic NL2SQL workflows.
+				Designed and implemented \href{https://saa2025.github.io/papers/Cortex - Workflow-Aware Resource Pooling and Scheduling for Agentic Serving.pdf}
+                {Cortex}, a prototype agentic serving platform that leverages workflow-awareness and stage isolation to improve scheduling and KV cache efficiency in agentic NL2SQL workflows. 
 			\end{jobDuties}
 		\end{rSubsection}
 
@@ -183,29 +234,38 @@ anchorcolor = \linkColor]{hyperref}
 
 
 	\begin{rSection}{Awards}
-		\begin{rSubsection}
+		\begin{fellowshipItem}
 			\fellowship{A.G. Leventis Foundation Scholarship} \hfill 2025
-		\end{rSubsection}
+		\end{fellowshipItem}
 
-		\begin{rSubsection}
+		\begin{fellowshipItem}
 			\fellowship{Gerondelis Foundation Scholarship} \hfill 2025
-		\end{rSubsection}
+		\end{fellowshipItem}
 
-		\begin{rSubsection}
+		\begin{fellowshipItem}
 			\fellowship{\href{https://www.cs.columbia.edu/2024/meet-the-scholars-phd-students-with-prestigious-fellowships/}{Columbia University Presidential Fellowship}} \hfill 2024
-		\end{rSubsection}
+		\end{fellowshipItem}
 	\end{rSection}
 
 	\begin{rSection}{Publications}
-		\begin{rSubsection}
-			\href{https://saa2025.github.io/papers/saa25-final5.pdf}{\paperTitle{Cortex: Workflow-Aware Resource Pooling and Scheduling for Agentic Serving}}
-
+		\begin{publicationItem}
+			\href{https://saa2025.github.io/papers/Cortex%20-%20Workflow-Aware%20Resource%20Pooling%20and%20Scheduling%20for%20Agentic%20Serving.pdf}{\paperTitle{Cortex: Workflow-Aware Resource Pooling and Scheduling for Agentic Serving}}%
 			\authors{\me, Yeounoh Chung, Kostis Kaffes, Arvind Krishnamurthy}
 
-			\venue{1st Workshop on Systems for Agentic AI (SAA 2025)}
-		\end{rSubsection}
+			\venue{1\ordinal{st} Workshop on Systems for Agentic AI (SAA 2025)}
+		\end{publicationItem}
 
-		\begin{rSubsection}
+		\begin{publicationItem}
+			\paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Resumable Cloud Computing}
+
+			\underSubmission
+
+			% \authors{Yizheng Xie, \me, Yuchen Lu, Yu Nie, Haoran Zhang, Konstantinos Kallas, Nikos Vasilakis} 
+
+			% \venue{2025 USENIX Annual Technical Conference (ATC 2025)} 
+		\end{publicationItem}
+
+		\begin{publicationItem}
 			\paperTitle{A System-Centric Approach is Necessary for AI Agents}
 
 			\underSubmission
@@ -213,63 +273,43 @@ anchorcolor = \linkColor]{hyperref}
 			% \authors{Jiaxiang Liu*, \me{}*, Haonan Wang*, Eugene Wu, Kostis Kaffes, Anirudh Sivaraman, Zhou Yu, Deepak Dastrala, Raman Jatkar \equalContributionNote} 
 
 			% \venue{20\ordinal{th} Workshop on Hot Topics in Operating Systems (HotOS 2025)} 
-		\end{rSubsection}
-
-		\begin{rSubsection}
-			\paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Recoverable Serverless Computing}
-
-			\underSubmission
-
-			% \authors{Yizheng Xie, \me, Yuchen Lu, Yu Nie, Haoran Zhang, Konstantinos Kallas, Nikos Vasilakis} 
-
-			% \venue{2025 USENIX Annual Technical Conference (ATC 2025)} 
-		\end{rSubsection}
-
-		% \begin{rSubsection}
-		%     \paperTitle{Fractal: Fault-Tolerant Shell-Script Distribution}
-
-		%     \underSubmission
-
-		%     % \authors{Ramiz Dundar*, Zhicheng Huang*, Yizheng Xie, \me, Konstantinos Kallas, Nikos Vasilakis \equalContributionNote} 
-
-		%     % \venue{19\ordinal{th} USENIX Symposium on Operating Systems Design and Implementation (OSDI 2025)} 
-		% \end{rSubsection}
+		\end{publicationItem}
 	\end{rSection}
 
 	\begin{rSection}{Service}
-		\begin{rSubsection}
+		\begin{serviceItem}
 			\service{EuroSys 2026} \hfill 2026
 
 			\role{\href{https://sysartifacts.github.io/eurosys2026/organizers}{Artifact Evaluation Committee}}
-		\end{rSubsection}
+		\end{serviceItem}
 
-		\begin{rSubsection}
+		\begin{serviceItem}
 			\service{SOSP 2025} \hfill 2025
 
 			\role{Artifact Evaluation Committee}
-		\end{rSubsection}
+		\end{serviceItem}
 
-		\begin{rSubsection}
+		\begin{serviceItem}
 			\service{OSDI 2025} \hfill 2025
 
 			\role{\href{https://www.usenix.org/conference/atc25}{Artifact Evaluation Committee}}
-		\end{rSubsection}
+		\end{serviceItem}
 
-		\begin{rSubsection}
+		\begin{serviceItem}
 			\service{ATC 2025} \hfill 2025
 
 			\role{\href{https://www.usenix.org/conference/osdi25}{Artifact Evaluation Committee}}
-		\end{rSubsection}
+		\end{serviceItem}
 
-		\begin{rSubsection}
+		\begin{serviceItem}
 			\service{EuroSec 2024} \hfill 2024
 
 			\role{\href{https://secopera.eu/eurosec-2024/}{Web and Publication Chair}}
-		\end{rSubsection}
+		\end{serviceItem}
 	\end{rSection}
 
 	\begin{rSection}{Teaching}
-		\begin{rSubsection}
+		\begin{teachingItem}
 			\institution{Columbia University} \hfill \singleDate{Fall 2025}
 
 			\role{Teaching Assistant} \hfill \place{New York, NY, US}
@@ -277,9 +317,9 @@ anchorcolor = \linkColor]{hyperref}
 			\stitle{Course} Networks, Crowds, and the Web
 
 			\stitle{Professor} \href{https://www.engineering.columbia.edu/faculty-staff/directory/augustin-chaintreau}{Augustin Chaintreau}
-		\end{rSubsection}
+		\end{teachingItem}
 
-		\begin{rSubsection}
+		\begin{teachingItem}
 			\institution{Columbia University} \hfill \singleDate{Spring 2025}
 
 			\role{Teaching Assistant} \hfill \place{New York, NY, US}
@@ -287,9 +327,9 @@ anchorcolor = \linkColor]{hyperref}
 			\stitle{Course} \href{https://w6113.github.io/}{Agentic Systems Made Real}
 
 			\stitle{Professors} \href{https://www.cs.columbia.edu/~ewu/}{Eugene Wu}, \href{https://www.cs.columbia.edu/~kkaffes/index.html}{Kostis Kaffes}
-		\end{rSubsection}
+		\end{teachingItem}
 
-		\begin{rSubsection}
+		\begin{teachingItem}
 			\institution{Brown University} \hfill \singleDate{Fall 2024}
 
 			\role{Teaching Assistant} \hfill \place{Providence, RI, US}
@@ -302,9 +342,9 @@ anchorcolor = \linkColor]{hyperref}
 				Guided students through a systems research project, including implementation, evaluation, and paper writing.
 				Paper submitted to USENIX ATC 2025.
 			\end{jobDuties}
-		\end{rSubsection}
+		\end{teachingItem}
 
-		\begin{rSubsection}
+		\begin{teachingItem}
 			\institution{Brown University} \hfill \singleDate{Spring 2024}
 
 			\role{Teaching Assistant} \hfill \place{Providence, RI, US}
@@ -316,9 +356,9 @@ anchorcolor = \linkColor]{hyperref}
 			\begin{jobDuties}
 				Helped revamp the course by redesigning its semester-long project and implementing its autograding infrastructure from scratch.
 			\end{jobDuties}
-		\end{rSubsection}
+		\end{teachingItem}
 
-		\begin{rSubsection}
+		\begin{teachingItem}
 			\institution{National Technical University of Athens} \hfill \singleDate{Spring 2022}
 
 			\role{Lab Assistant} \hfill \place{Athens, Greece}
@@ -326,9 +366,9 @@ anchorcolor = \linkColor]{hyperref}
 			\stitle{Course} Operating Systems
 
 			\stitle{Professors} \href{http://www.cslab.ntua.gr/~nkoziris/}{N. Koziris}, \href{http://www.cslab.ntua.gr/~goumas/}{G. Goumas}
-		\end{rSubsection}
+		\end{teachingItem}
 
-		\begin{rSubsection}
+		\begin{teachingItem}
 			\institution{National Technical University of Athens} \hfill \singleDate{Spring 2020}
 
 			\role{Lab Assistant} \hfill \place{Athens, Greece}
@@ -336,9 +376,9 @@ anchorcolor = \linkColor]{hyperref}
 			\stitle{Course} Programming Techniques
 
 			\stitle{Professors} \href{http://www.softlab.ntua.gr/~nickie/}{N. Papaspyrou}, \href{http://users.softlab.ntua.gr/~pagour/}{A. Pagourtzis}, \href{http://www.image.ntua.gr/~gstam/}{G. Stamou}, \href{http://www.cslab.ntua.gr/~goumas/}{G. Goumas}
-		\end{rSubsection}
+		\end{teachingItem}
 
-		\begin{rSubsection}
+		\begin{teachingItem}
 			\institution{National Technical University of Athens} \hfill \singleDate{Fall 2019}
 
 			\role{Lab Assistant} \hfill \place{Athens, Greece}
@@ -346,48 +386,48 @@ anchorcolor = \linkColor]{hyperref}
 			\stitle{Course} Introduction to Programming
 
 			\stitle{Professors} \href{http://www.softlab.ntua.gr/~nickie/}{N. Papaspyrou}, \href{http://www.softlab.ntua.gr/~fotakis/}{D. Fotakis}, \href{https://en.wikipedia.org/wiki/Stathis_Zachos}{S. Zachos}
-		\end{rSubsection}
+		\end{teachingItem}
 	\end{rSection}
 
-	\begin{rSection}{Posters}
-		\begin{rSubsection}
-			\poster{Bibarel: Accelerating Agentic Planning Through Dynamic Parallelism and Live Migration} \hfill Apr 2024
+	% \begin{rSection}{Posters}
+	% 	\begin{rSubsection}
+	% 		\poster{Bibarel: Accelerating Agentic Planning Through Dynamic Parallelism and Live Migration} \hfill Apr 2024
 
-			\event{\href{https://datascience.columbia.edu/event/data-science-day-2025/}{Data Science Day}} \hfill \place{Columbia University Data Science Institute}
-		\end{rSubsection}
+	% 		\event{\href{https://datascience.columbia.edu/event/data-science-day-2025/}{Data Science Day}} \hfill \place{Columbia University Data Science Institute}
+	% 	\end{rSubsection}
 
-		\begin{rSubsection}
-			\poster{Bibarel: Accelerating Agentic Planning Through Dynamic Parallelism and Live Migration} \hfill Mar 2024
+	% 	\begin{rSubsection}
+	% 		\poster{Bibarel: Accelerating Agentic Planning Through Dynamic Parallelism and Live Migration} \hfill Mar 2024
 
-			\event{\href{https://daplab.cs.columbia.edu/workshop/}{AI Agents for Work Workshop}} \hfill \place{Columbia Business School}
-		\end{rSubsection}
-	\end{rSection}
+	% 		\event{\href{https://daplab.cs.columbia.edu/workshop/}{AI Agents for Work Workshop}} \hfill \place{Columbia Business School}
+	% 	\end{rSubsection}
+	% \end{rSection}
 
-	\begin{rSection}{Talks}
-		% \begin{rSubsection}
-		%     \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill \singleDate{Apr 2024}
+	% \begin{rSection}{Talks}
+	% 	% \begin{rSubsection}
+	% 	%     \talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill \singleDate{Apr 2024}
 
-		%     \event{\pash Retreat 2024} \hfill \place{Brown University Data Science Institute}
-		% \end{rSubsection}
+	% 	%     \event{\pash Retreat 2024} \hfill \place{Brown University Data Science Institute}
+	% 	% \end{rSubsection}
 
-		\begin{rSubsection}
-			\talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill \singleDate{Feb 2024}
+	% 	\begin{rSubsection}
+	% 		\talk{\splash: Scaling Out Shell Scripts on Serverless Platforms} \hfill \singleDate{Feb 2024}
 
-			\event{Sysread Seminar} \hfill \place{Brown University}
-		\end{rSubsection}
+	% 		\event{Sysread Seminar} \hfill \place{Brown University}
+	% 	\end{rSubsection}
 
-		% \begin{rSubsection}
-		%     \talk{\splash: Scaling Out Shell Scripts Using Serverless} \hfill \singleDate{Nov 2023}
+	% 	% \begin{rSubsection}
+	% 	%     \talk{\splash: Scaling Out Shell Scripts Using Serverless} \hfill \singleDate{Nov 2023}
 
-		%     \event{Sysread Seminar} \hfill \place{Brown University Data Science Institute}
-		% \end{rSubsection}
+	% 	%     \event{Sysread Seminar} \hfill \place{Brown University Data Science Institute}
+	% 	% \end{rSubsection}
 
-		\begin{rSubsection}
-			\talk{\splash: Towards Serverless Shell Scripting} \hfill \singleDate{Oct 2023}
+	% 	\begin{rSubsection}
+	% 		\talk{\splash: Towards Serverless Shell Scripting} \hfill \singleDate{Oct 2023}
 
-			\event{3\ordinal{rd} \pash Workshop} \hfill \place{Brown University}
-		\end{rSubsection}
-	\end{rSection}
+	% 		\event{3\ordinal{rd} \pash Workshop} \hfill \place{Brown University}
+	% 	\end{rSubsection}
+	% \end{rSection}
 
 	% \begin{rSection}{Competitions}
 	%     \begin{rSubsection}
@@ -467,10 +507,29 @@ anchorcolor = \linkColor]{hyperref}
 	%     \end{rSubsection}
 	% \end{rSection}
 
+	\begin{rSection}{Research Mentoring}
+		\begin{menteeItem}
+			\mentee{\href{https://www.linkedin.com/in/ggracelii/}{Grace Li}} \hfill \interval{Sep 2025}{Present}
+
+			\menteePlace{Columbia University, BS in CS and Math} 
+		\end{menteeItem}
+		\begin{menteeItem}
+			\mentee{\href{https://www.linkedin.com/in/j2hng/}{Joey Huang}} \hfill \interval{Sep 2025}{Present}
+
+			\menteePlace{Columbia University, BS in CS}
+		\end{menteeItem}
+		\begin{menteeItem}
+			\mentee{\href{https://www.linkedin.com/in/matthew-lou-/}{Matthew Lou}} \hfill \interval{Sep 2025}{Present}
+
+			\menteePlace{Columbia University, BS in CS and Applied Math}
+		\end{menteeItem}
+	\end{rSection}
+
 	\begin{rSection}{Skills}
 		\begin{rSubsection}
 			\begin{tabular}{@{} >{\bfseries}l l @{}}
-				Prog. Languages & C, Python, Javascript, Shell, Java, Go              \\
+				Prog. Languages & Python, C, Shell, Javascript, Java, Go \\
+				Frameworks     & LangChain, LangGraph \\
 				Platforms       & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
 				Tools           & Git, LaTeX
 			\end{tabular}
