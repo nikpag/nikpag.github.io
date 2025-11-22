@@ -29,5 +29,3 @@ I received my Master's degree in [Electrical and Computer Engineering](https://w
 Currently, I am working on AI systems: improving scheduling for agentic workflows, accelerating application-agnostic LLM serving, and providing efficient simulation support for agentic rollouts.
 
 In the past, I have worked on improving shell scripting performance: accelerating shell scripts by automatically scaling them out to serverless infrastructure, and providing fault tolerance for distributed shell script execution.
-
-In my free time, I hunt down concerts that convey a mix of proficiency and humanity, and test the patience of fellow concert-goers by air-drumming.
