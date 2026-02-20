@@ -25,4 +25,4 @@ In Summer 2025, I was a Student Researcher at [Google](https://techsysinfra.goog
 
 Before joining Columbia, I was a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown University](https://cs.brown.edu/), where I worked on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
-I received my Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from the [National Technical University of Athens](https://www.ntua.gr/en/), where I was advised by Prof. [Georgios Goumas](http://www.cslab.ntua.gr/~goumas/).
+I received my Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from the [National Technical University of Athens (NTUA)](https://www.ntua.gr/en/), where I was advised by Prof. [Georgios Goumas](http://www.cslab.ntua.gr/~goumas/).
