@@ -17,7 +17,7 @@ social: true # includes social icons at the bottom of the page
 
 Hi! I am Nikos, a PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/), where I am a member of [DAPLab](https://daplab.cs.columbia.edu), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
 
-My research targets serving systems for agentic AI, with a focus on exploiting workflow structure and runtime characteristics to optimize scheduling, resource allocation, and model routing.
+My research focuses on improving the performance and efficiency of agentic serving systems. I build systems that exploit workflow structure and runtime characteristics to optimize scheduling, resource allocation, and model routing.
 
 <!-- This summer, I am working as a Research Intern at [Microsoft Research](https://www.microsoft.com/en-us/research/), supervised by [Sharad Agarwal](https://sharadagarwal.net). -->
 
