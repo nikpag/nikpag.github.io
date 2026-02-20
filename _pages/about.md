@@ -23,6 +23,6 @@ My research targets serving systems for agentic AI, with a focus on exploiting w
 
 In Summer 2025, I was a Student Researcher at [Google](https://techsysinfra.google/research/), where I worked on [Cortex](https://saa2025.github.io/papers/Cortex%20-%20Workflow-Aware%20Resource%20Pooling%20and%20Scheduling%20for%20Agentic%20Serving.pdf), a workflow-aware agentic serving system, supervised by Prof. [Arvind Krishnamurthy](https://sites.google.com/cs.washington.edu/arvind).
 
-Before joining Columbia, I was a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown CS](https://cs.brown.edu/), where I worked on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
+Before joining Columbia, I was a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown University](https://cs.brown.edu/), where I worked on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/).
 
 I received my Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from the [National Technical University of Athens](https://www.ntua.gr/en/), where I was advised by Prof. [Georgios Goumas](http://www.cslab.ntua.gr/~goumas/).

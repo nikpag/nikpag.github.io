@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I joined [Brown CS](https://cs.brown.edu/) as a Student Researcher!
+I joined [Brown University](https://cs.brown.edu/) as a Student Researcher!
