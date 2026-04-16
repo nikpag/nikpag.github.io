@@ -21,7 +21,7 @@ anchorcolor = \linkColor]{hyperref}
 \setromanfont[Scale=MatchLowercase]{Minion Pro}
 \setsansfont[Scale=MatchLowercase]{Myriad Pro}
 \setmonofont[Scale=MatchLowercase]{Inconsolata}
-\setmathfont[Scale=MatchLowercase]{Libertinus Math}
+\setmathfont[Scale=MatchLowercase]{LibertinusMath-Regular.otf}
 \setlist[itemize]{topsep=1ex, left=0em, labelsep=0.5em}
 
 %%% Annotations
@@ -64,7 +64,7 @@ anchorcolor = \linkColor]{hyperref}
 \newcommand{\mentee}[1]{\header{#1}\xspace}
 \newcommand{\menteePlace}[1]{\textit{#1}\xspace}
 \newcommand{\ordinal}[1]{\textsuperscript{#1}\xspace}
-\newcommand{\paperTitle}[1]{\header{#1}\xspace}
+\newcommand{\paperTitle}[1]{\textbf{#1}}
 \newcommand{\place}[1]{#1\xspace}
 \newcommand{\poster}[1]{\header{#1}\xspace}
 \newcommand{\project}[2]{\header{\href{#2}{#1}}}
@@ -156,8 +156,8 @@ anchorcolor = \linkColor]{hyperref}
 			\stitle{GPA} \( 3.94 / 4.00 \)
 
 			\begin{jobDuties}
-				Member of \href{https://daplab.cs.columbia.edu/}{DAPLab}, focusing on AI systems.
-				Working on improving scheduling for agentic workflows, accelerating application-agnostic LLM serving, and providing efficient simulation support for agentic rollouts.
+				Member of \href{https://daplab.cs.columbia.edu/}{DAPLab}, focusing on systems for agentic AI.
+				My research focuses on improving the performance and efficiency of agentic serving. I build systems that exploit workflow structure and runtime characteristics to optimize model routing, scheduling, and resource allocation.
 			\end{jobDuties}
 		\end{rSubsection}
 
@@ -268,30 +268,33 @@ anchorcolor = \linkColor]{hyperref}
 
 	\begin{rSection}{Publications}
 		\begin{publicationItem}
-			\href{https://saa2025.github.io/papers/Cortex%20-%20Workflow-Aware%20Resource%20Pooling%20and%20Scheduling%20for%20Agentic%20Serving.pdf}{\paperTitle{Cortex: Workflow-Aware Resource Pooling and Scheduling for Agentic Serving}}%
+			\href{https://arxiv.org/abs/2604.06296}{\paperTitle{AgentOpt v0.1 Technical Report: Client-Side Optimization for LLM-Based Agents}}
+
+			\authors{Wenyue Hua, Sripad Karne, Qian Xie, Armaan Agrawal, \me, Kostis Kaffes, Tianyi Peng}
+		\end{publicationItem}
+
+		\begin{publicationItem}
+			\paperTitle{VineLM: Trie-Based Fine-Grained Control for Agentic Workflows}
+
+			\authors{\me, Matthew Lou, Tianyi Peng, Dan Rubenstein, Kostis Kaffes}
+		\end{publicationItem}
+
+		\begin{publicationItem}
+			\href{https://saa2025.github.io/papers/Cortex%20-%20Workflow-Aware%20Resource%20Pooling%20and%20Scheduling%20for%20Agentic%20Serving.pdf}{\paperTitle{Cortex: Workflow-Aware Resource Pooling and Scheduling for Agentic Serving}}
+
 			\authors{\me, Yeounoh Chung, Kostis Kaffes, Arvind Krishnamurthy}
 
 			\venue{SOSP 2025 Workshop on Systems for Agentic AI (SAA 2025)}
 		\end{publicationItem}
 
 		\begin{publicationItem}
-			\paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Resumable Cloud Computing}
+			\paperTitle{\( \lambda \)eash: Scaling Out Shell Scripts with Reliable Cloud Computing}
 
 			\underSubmission
 
 			% \authors{Yizheng Xie, \me, Yuchen Lu, Yu Nie, Haoran Zhang, Konstantinos Kallas, Nikos Vasilakis} 
 
 			% \venue{2025 USENIX Annual Technical Conference (ATC 2025)} 
-		\end{publicationItem}
-
-		\begin{publicationItem}
-			\paperTitle{A System-Centric Approach is Necessary for AI Agents}
-
-			\underSubmission
-
-			% \authors{Jiaxiang Liu*, \me{}*, Haonan Wang*, Eugene Wu, Kostis Kaffes, Anirudh Sivaraman, Zhou Yu, Deepak Dastrala, Raman Jatkar \equalContributionNote} 
-
-			% \venue{20\ordinal{th} Workshop on Hot Topics in Operating Systems (HotOS 2025)} 
 		\end{publicationItem}
 	\end{rSection}
 
