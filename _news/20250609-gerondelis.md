@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I was awarded the Gerondelis Foundation Scholarship!
+I was awarded the [Gerondelis Foundation](https://gerondelisfoundation.com) Scholarship!

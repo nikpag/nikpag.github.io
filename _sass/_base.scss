@@ -35,6 +35,10 @@ table {
   }
 }
 
+.news-date {
+  white-space: nowrap;
+}
+
 a,
 table.table a {
   color: var(--global-theme-color);
