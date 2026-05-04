@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi! I am Nikos, a PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/), where I am a member of [DAPLab](https://daplab.cs.columbia.edu), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
+Hi! I am Nikos, a second-year PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/), where I am a member of [DAPLab](https://daplab.cs.columbia.edu), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/).
 
 My research focuses on improving the performance and efficiency of agentic serving. I build systems that exploit workflow structure and runtime characteristics to optimize model routing, scheduling, and resource allocation.
 
