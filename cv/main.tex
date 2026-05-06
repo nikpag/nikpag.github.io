@@ -1,4 +1,4 @@
-\documentclass[margin,12pt]{resume} 
+\documentclass[margin,11pt]{resume} 
 
 %%% Packages
 \usepackage{fontspec}
@@ -18,9 +18,49 @@ anchorcolor = \linkColor]{hyperref}
 \usepackage{enumitem}
 
 %%% Package options
-\setromanfont[Scale=MatchLowercase]{Minion Pro}
-\setsansfont[Scale=MatchLowercase]{Myriad Pro}
-\setmonofont[Scale=MatchLowercase]{Inconsolata}
+\newcommand{\localFontDir}{/Users/nikpag/Library/Fonts/}
+
+\IfFileExists{\localFontDir MinionPro-Regular.otf}{
+	\setromanfont[
+		Scale=MatchLowercase,
+		Path=\localFontDir,
+		UprightFont=MinionPro-Regular.otf,
+		BoldFont=MinionPro-Semibold.otf,
+		ItalicFont=MinionPro-It.otf,
+		BoldItalicFont=MinionPro-SemiboldIt.otf
+	]{Minion Pro}
+}{
+	\setromanfont[Scale=MatchLowercase]{Minion Pro}
+}
+
+\IfFileExists{\localFontDir MYRIADPRO-REGULAR.OTF}{
+	\setsansfont[
+		Scale=MatchLowercase,
+		Path=\localFontDir,
+		UprightFont=MYRIADPRO-REGULAR.OTF,
+		BoldFont=MYRIADPRO-BOLD.OTF,
+		ItalicFont=MYRIADPRO-REGULAR.OTF,
+		ItalicFeatures={FakeSlant=0.2},
+		BoldItalicFont=MYRIADPRO-BOLDIT.OTF
+	]{Myriad Pro}
+}{
+	\setsansfont[Scale=MatchLowercase]{Myriad Pro}
+}
+
+\IfFileExists{\localFontDir Inconsolata-Regular.ttf}{
+	\setmonofont[
+		Scale=MatchLowercase,
+		Path=\localFontDir,
+		UprightFont=Inconsolata-Regular.ttf,
+		BoldFont=Inconsolata-Bold.ttf,
+		ItalicFont=Inconsolata-Regular.ttf,
+		ItalicFeatures={FakeSlant=0.2},
+		BoldItalicFont=Inconsolata-Bold.ttf
+	]{Inconsolata}
+}{
+	\setmonofont[Scale=MatchLowercase]{Inconsolata}
+}
+
 \setmathfont[Scale=MatchLowercase]{LibertinusMath-Regular.otf}
 \setlist[itemize]{topsep=1ex, left=0em, labelsep=0.5em}
 
@@ -68,9 +108,10 @@ anchorcolor = \linkColor]{hyperref}
 \newcommand{\place}[1]{#1\xspace}
 \newcommand{\poster}[1]{\header{#1}\xspace}
 \newcommand{\project}[2]{\header{\href{#2}{#1}}}
-\newcommand{\role}[1]{\textit{#1}\xspace}
+\newcommand{\jobRole}[1]{\textit{#1}\xspace}
+\newcommand{\serviceRole}[1]{\textbf{#1}\xspace}
+\newcommand{\teachingRole}[1]{\textit{#1}\xspace}
 \newcommand{\seminar}[1]{\header{#1}\xspace}
-\newcommand{\service}[1]{\header{#1}\xspace}
 \newcommand{\singleDate}[1]{#1\xspace}
 \newcommand{\stitle}[1]{#1:\xspace}
 \newcommand{\talk}[1]{\header{#1}\xspace}
@@ -180,21 +221,21 @@ anchorcolor = \linkColor]{hyperref}
 	\end{rSection}
 
 	\begin{rSection}{Experience}
-		% \begin{rSubsection}
-		% 	\company{Microsoft Research} \hfill \interval{May 2025}{Aug 2025}
+		\begin{rSubsection}
+			\company{Microsoft Research} \hfill \interval{May 2025}{Aug 2025}
 
-		% 	\role{Research Intern} \hfill \place{Redmond, WA, US}
+			\jobRole{Research Intern} \hfill \place{Redmond, WA, US}
 
-		% 	\stitle{Supervisor} \href{http://sharadagarwal.net}{Sharad Agarwal}
+			\stitle{Supervisor} \href{http://sharadagarwal.net}{Sharad Agarwal}
 
-		% 	% \begin{jobDuties}
-		% 	% \end{jobDuties}
-		% \end{rSubsection}
+			% \begin{jobDuties}
+			% \end{jobDuties}
+		\end{rSubsection}
 
 		\begin{rSubsection}
 			\company{Google} \hfill \interval{May 2025}{Aug 2025}
 
-			\role{Student Researcher} \hfill \place{Sunnyvale, CA, US}
+			\jobRole{Student Researcher} \hfill \place{Sunnyvale, CA, US}
 
 			\stitle{Supervisor} Prof. \href{https://sites.google.com/cs.washington.edu/arvind}{Arvind Krishnamurthy}
 
@@ -207,7 +248,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{rSubsection}
 			\company{Brown University} \hfill \interval{Sep 2023}{May 2024}
 
-			\role{Student Researcher} \hfill \place{Providence, RI, US}
+			\jobRole{Student Researcher} \hfill \place{Providence, RI, US}
 
 			\stitle{Advisor} Prof. \href{https://nikos.vasilak.is}{Nikos Vasilakis}
 
@@ -220,7 +261,7 @@ anchorcolor = \linkColor]{hyperref}
 		% \begin{rSubsection}
 		% \company{National Technical University of Athens} \hfill \interval{Oct 2022}{Sep 2023} 
 
-		% \role{Technical Support} \hfill \place{Athens, Greece} 
+		% \jobRole{Technical Support} \hfill \place{Athens, Greece} 
 
 		% \stitle{Supervisors} Prof. Panayiotis Tsanakas, Prof. Efstathios Sykas 
 
@@ -232,7 +273,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{rSubsection}
 			\company{Arrikto Inc.} \hfill \interval{Dec 2022}{Mar 2023}
 
-			\role{Software Engineering Intern} \hfill \place{Athens, Greece}
+			\jobRole{Software Engineering Intern} \hfill \place{Athens, Greece}
 
 			\stitle{Supervisor} \href{https://www.linkedin.com/in/vkoukis/}{Vangelis Koukis}
 
@@ -281,7 +322,7 @@ anchorcolor = \linkColor]{hyperref}
 		\end{publicationItem}
 
 		\begin{publicationItem}
-			\paperTitle{VineLM: Trie-Based Fine-Grained Control for Agentic Workflows}
+			\paperTitle{\href{https://nikpag.github.io/assets/pdf/vineLM.pdf}{VineLM: Trie-Based Fine-Grained Control for Agentic Workflows}}
 
 			\authors{\me, Matthew Lou, Tianyi Peng, Dan Rubenstein, Kostis Kaffes}
 		\end{publicationItem}
@@ -307,39 +348,15 @@ anchorcolor = \linkColor]{hyperref}
 
 	\begin{rSection}{Service}
 		\begin{serviceItem}
-			\service{CAIS 2026} \hfill 2026
+			\serviceRole{Artifact Evaluation Committees}
 
-			\role{\href{https://cais26-ae.hotcrp.com/u/0/users/pc}{Artifact Evaluation Committee}}
+			\href{https://cais26-ae.hotcrp.com/users/pc}{CAIS~2026}, \href{https://eurosys26-ae-spring.hotcrp.com/users/pc}{EuroSys}~\href{https://eurosys26-ae-fall.hotcrp.com/users/pc}{2026}, \href{https://sosp25ae.hotcrp.com/users/pc}{SOSP~2025}, \href{https://osdi25ae.usenix.hotcrp.com/users/pc}{OSDI~2025}, \href{https://atc25ae.usenix.hotcrp.com/users/pc}{ATC~2025}
 		\end{serviceItem}
 
 		\begin{serviceItem}
-			\service{EuroSys 2026} \hfill 2026
+			\serviceRole{Web and Publication Chair}
 
-			\role{\href{https://sysartifacts.github.io/eurosys2026/organizers}{Artifact Evaluation Committee}}
-		\end{serviceItem}
-
-		\begin{serviceItem}
-			\service{SOSP 2025} \hfill 2025
-
-			\role{\href{https://sosp25ae.hotcrp.com/u/0/users/pc}{Artifact Evaluation Committee}}
-		\end{serviceItem}
-
-		\begin{serviceItem}
-			\service{OSDI 2025} \hfill 2025
-
-			\role{\href{https://www.usenix.org/conference/atc25}{Artifact Evaluation Committee}}
-		\end{serviceItem}
-
-		\begin{serviceItem}
-			\service{ATC 2025} \hfill 2025
-
-			\role{\href{https://www.usenix.org/conference/osdi25}{Artifact Evaluation Committee}}
-		\end{serviceItem}
-
-		\begin{serviceItem}
-			\service{EuroSec 2024} \hfill 2024
-
-			\role{\href{https://secopera.eu/eurosec-2024/}{Web and Publication Chair}}
+			\href{https://secopera.eu/eurosec-2024/}{EuroSec~2024}
 		\end{serviceItem}
 	\end{rSection}
 
@@ -347,7 +364,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{teachingItem}
 			\institution{Columbia University} \hfill \singleDate{Fall 2025}
 
-			\role{Teaching Assistant} \hfill \place{New York, NY, US}
+			\teachingRole{Teaching Assistant} \hfill \place{New York, NY, US}
 
 			\stitle{Course} Networks, Crowds, and the Web
 
@@ -357,7 +374,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{teachingItem}
 			\institution{Columbia University} \hfill \singleDate{Spring 2025}
 
-			\role{Teaching Assistant} \hfill \place{New York, NY, US}
+			\teachingRole{Teaching Assistant} \hfill \place{New York, NY, US}
 
 			\stitle{Course} \href{https://w6113.github.io/}{Agentic Systems Made Real}
 
@@ -367,7 +384,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{teachingItem}
 			\institution{Brown University} \hfill \singleDate{Fall 2024}
 
-			\role{Teaching Assistant} \hfill \place{Providence, RI, US}
+			\teachingRole{Teaching Assistant} \hfill \place{Providence, RI, US}
 
 			\stitle{Course} \href{https://cs.brown.edu/courses/csci2952r/}{Systems Transforming Systems}
 
@@ -382,7 +399,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{teachingItem}
 			\institution{Brown University} \hfill \singleDate{Spring 2024}
 
-			\role{Teaching Assistant} \hfill \place{Providence, RI, US}
+			\teachingRole{Teaching Assistant} \hfill \place{Providence, RI, US}
 
 			\stitle{Course} \href{https://cs.brown.edu/courses/csci1380/s24/}{Distributed Systems}
 
@@ -396,7 +413,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{teachingItem}
 			\institution{National Technical University of Athens} \hfill \singleDate{Spring 2022}
 
-			\role{Lab Assistant} \hfill \place{Athens, Greece}
+			\teachingRole{Lab Assistant} \hfill \place{Athens, Greece}
 
 			\stitle{Course} Operating Systems
 
@@ -406,7 +423,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{teachingItem}
 			\institution{National Technical University of Athens} \hfill \singleDate{Spring 2020}
 
-			\role{Lab Assistant} \hfill \place{Athens, Greece}
+			\teachingRole{Lab Assistant} \hfill \place{Athens, Greece}
 
 			\stitle{Course} Programming Techniques
 
@@ -416,7 +433,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{teachingItem}
 			\institution{National Technical University of Athens} \hfill \singleDate{Fall 2019}
 
-			\role{Lab Assistant} \hfill \place{Athens, Greece}
+			\teachingRole{Lab Assistant} \hfill \place{Athens, Greece}
 
 			\stitle{Course} Introduction to Programming
 
@@ -533,7 +550,7 @@ anchorcolor = \linkColor]{hyperref}
 	%     \begin{rSubsection}
 	%         \institution{Seed Robotics} \hfill \interval{Oct 2022}{Jun 2023}
 
-	%         \role{Robotics Instructor} \hfill \place{Athens, Greece}
+	%         \teachingRole{Robotics Instructor} \hfill \place{Athens, Greece}
 
 	%         \begin{jobDuties}
 	%             Guided school students through construction and programming of a series of robotics projects.
@@ -542,7 +559,7 @@ anchorcolor = \linkColor]{hyperref}
 	%     \end{rSubsection}
 	% \end{rSection}
 
-	\begin{rSection}{Research Mentoring}
+	\begin{rSection}{Research\\Mentoring}
 		\begin{menteeItem}
 			\mentee{\href{https://www.linkedin.com/in/ggracelii/}{Grace Li}} \hfill \interval{Sep 2025}{Present}
 

@@ -1,0 +1,10 @@
+{
+  "name": "nikpag-github-io",
+  "private": true,
+  "scripts": {
+    "format-bib": "node scripts/format-bib.js"
+  },
+  "devDependencies": {
+    "bibtex-tidy": "1.14.0"
+  }
+}

@@ -5,13 +5,13 @@ permalink: /
 subtitle: CS PhD Student @ Columbia University
 
 profile:
-    align: right
-    image: profile.jpeg
-    image_circular: false # crops the image to make it circular
+  align: right
+  image: profile.jpeg
+  image_circular: false # crops the image to make it circular
 
 news: true # includes a list of news items
 latest_posts: false # includes a list of the newest posts
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
@@ -19,7 +19,7 @@ Hi! I am Nikos, a second-year PhD student in [Computer Science](https://www.cs.c
 
 My research focuses on improving the performance and efficiency of agentic serving. I build systems that exploit workflow structure and runtime characteristics to optimize model routing, scheduling, and resource allocation.
 
-<!-- This summer, I am working as a Research Intern at [Microsoft Research](https://www.microsoft.com/en-us/research/), supervised by [Sharad Agarwal](https://sharadagarwal.net). -->
+This summer, I am working as a Research Intern at [Microsoft Research](https://www.microsoft.com/en-us/research/), supervised by [Sharad Agarwal](https://sharadagarwal.net).
 
 In Summer 2025, I was a Student Researcher at [Google](https://techsysinfra.google/research/), where I worked on [Cortex](https://saa2025.github.io/papers/Cortex%20-%20Workflow-Aware%20Resource%20Pooling%20and%20Scheduling%20for%20Agentic%20Serving.pdf), a workflow-aware agentic serving system, supervised by Prof. [Arvind Krishnamurthy](https://sites.google.com/cs.washington.edu/arvind).
 

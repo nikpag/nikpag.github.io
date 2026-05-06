@@ -1,4 +1,45 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda"
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[markdown]": {
+        "editor.formatOnSave": false
+    },
+    "[bibtex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop",
+        "editor.formatOnSave": false,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "latex-workshop.bibtex-format.sort.enabled": false,
+    "latex-workshop.bibtex-format.align-equal.enabled": true,
+    "latex-workshop.bibtex-format.sortby": [
+        "key"
+    ],
+    "latex-workshop.bibtex-format.trailingComma": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "_bibliography/papers\\.bib$",
+                "cmd": "cd \"${workspaceFolder}\" && npm run format-bib"
+            }
+        ]
+    }
 }

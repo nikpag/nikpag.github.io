@@ -62,21 +62,29 @@ pagination:
                     <h3 class="card-title text-lowercase">{{ post.title }}</h3>
                     <p class="card-text">{{ post.description }}</p>
 
-                    {% if post.external_source == blank %}
-                      {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-                    {% else %}
-                      {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+                    {% if post.redirect == blank %}
+                      {% if post.external_source == blank %}
+                        {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
+                      {% else %}
+                        {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+                      {% endif %}
                     {% endif %}
                     {% assign year = post.date | date: "%Y" %}
 
+                    {%- if post.redirect == blank or post.show_year_icon != false -%}
                     <p class="post-meta">
+                      {%- if post.redirect == blank -%}
                       {{ read_time }} min read
+                      {%- endif -%}
                       {%- if post.show_year_icon != false -%}
+                      {%- if post.redirect == blank -%}
                       &nbsp;&nbsp;&middot;&nbsp;
+                      {%- endif -%}
                       <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
                         <i class="fas fa-calendar fa-sm"></i> {{ year }} </a>
                       {%- endif -%}
                     </p>
+                    {%- endif -%}
                   </div>
                 </div>
               </div>
@@ -93,10 +101,12 @@ pagination:
     {% assign sorted_posts = site.posts | sort: "date" | reverse %}
     {% for post in sorted_posts %}
 
-    {% if post.external_source == blank %}
-      {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-    {% else %}
-      {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+    {% if post.redirect == blank %}
+      {% if post.external_source == blank %}
+        {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
+      {% else %}
+        {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+      {% endif %}
     {% endif %}
     {% assign year = post.date | date: "%Y" %}
     {% assign tags = post.tags | join: "" %}
@@ -121,7 +131,9 @@ pagination:
       </h3>
       <p>{{ post.description }}</p>
       <p class="post-meta">
+        {%- if post.redirect == blank -%}
         {{ read_time }} min read&nbsp;&nbsp;&middot;&nbsp;
+        {%- endif -%}
         {{ post.date | date: '%B %-d, %Y' }}
         {%- if post.external_source %}
         &nbsp;&middot;&nbsp;&nbsp;{{ post.external_source }}
