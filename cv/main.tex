@@ -16,6 +16,12 @@ anchorcolor = \linkColor]{hyperref}
 \usepackage{xspace}
 \usepackage{array}
 \usepackage{enumitem}
+\usepackage{needspace}
+
+% resume.cls disables aux writes, but the section-width cache below needs them.
+\makeatletter
+\@fileswtrue
+\makeatother
 
 %%% Package options
 \newcommand{\localFontDir}{/Users/nikpag/Library/Fonts/}
@@ -121,16 +127,105 @@ anchorcolor = \linkColor]{hyperref}
 \newcommand{\venue}[1]{\textit{#1}\xspace}
 
 %%% Environments
-\newenvironment{rSubsection}{}{\par\subsectionVSpace} 
-\newenvironment{rSection}[1]{\sectionVSpaceCorrection\section{#1}\xspace}{\sectionVSpace\par}
+\newlength{\cvsectionbodyoffset}
+\newlength{\cvsectionwidestheaderwidth}
+\newsavebox{\cvsectionheaderbox}
+\providecommand{\cvsectionstoredwidestheaderwidth}{0pt}
+\ExplSyntaxOn
+\box_new:N \l_cv_section_measure_box
+\seq_new:N \l_cv_section_words_seq
+\seq_new:N \l_cv_section_lines_seq
+\tl_new:N \l_cv_section_line_tl
+\tl_new:N \l_cv_section_candidate_tl
+\cs_new_protected:Npn \cv_section_store_current_line:
+	{
+		\tl_if_blank:VF \l_cv_section_line_tl
+			{
+				\seq_put_right:NV \l_cv_section_lines_seq \l_cv_section_line_tl
+				\tl_clear:N \l_cv_section_line_tl
+			}
+	}
+\cs_new_protected:Npn \setCvSectionHeader #1
+	{
+		\seq_set_split:Nnn \l_cv_section_words_seq {~} {#1}
+		\seq_clear:N \l_cv_section_lines_seq
+		\tl_clear:N \l_cv_section_line_tl
+		\seq_map_inline:Nn \l_cv_section_words_seq
+			{
+				\tl_if_blank:VTF \l_cv_section_line_tl
+					{ \tl_set:Nn \l_cv_section_candidate_tl {##1} }
+					{ \tl_set:Nx \l_cv_section_candidate_tl { \l_cv_section_line_tl \c_space_tl ##1 } }
+				\hbox_set:Nn \l_cv_section_measure_box { \sectionfont \l_cv_section_candidate_tl }
+				\dim_compare:nNnTF { \box_wd:N \l_cv_section_measure_box } > { \cvsectionheaderwidth }
+					{
+						\tl_if_blank:VTF \l_cv_section_line_tl
+							{ \tl_set:Nn \l_cv_section_line_tl {##1} }
+							{
+								\cv_section_store_current_line:
+								\tl_set:Nn \l_cv_section_line_tl {##1}
+							}
+					}
+					{ \tl_set_eq:NN \l_cv_section_line_tl \l_cv_section_candidate_tl }
+			}
+		\cv_section_store_current_line:
+		\setbox\cvsectionheaderbox=\vtop
+			{
+				\parindent=0pt
+				\seq_map_inline:Nn \l_cv_section_lines_seq
+					{ \hbox { \sectionfont ##1 } }
+			}
+	}
+\ExplSyntaxOff
+\newcommand{\recordCvSectionHeaderWidth}{%
+	\ifdim\wd\cvsectionheaderbox>\cvsectionwidestheaderwidth
+		\global\cvsectionwidestheaderwidth=\wd\cvsectionheaderbox
+	\fi
+}
+\newcommand{\setCvSectionBodyOffset}{%
+	\global\cvsectionwidestheaderwidth=0pt%
+	\setlength{\cvsectionbodyoffset}{\cvsectionstoredwidestheaderwidth}%
+	\addtolength{\cvsectionbodyoffset}{\cvsectiontextgap}%
+}
+\makeatletter
+\AtEndDocument{%
+	\ifdim\cvsectionwidestheaderwidth=\cvsectionstoredwidestheaderwidth\relax
+	\else
+		\@latex@warning@no@line{CV section header width changed. Rerun LaTeX to align section bodies}%
+	\fi
+	\immediate\write\@auxout{%
+		\gdef\string\cvsectionstoredwidestheaderwidth{\the\cvsectionwidestheaderwidth}%
+	}%
+}
+\makeatother
+\newcommand{\entryNeedspace}{\par\Needspace{2\baselineskip}}
+\newenvironment{fellowshipItem}{\entryNeedspace}{\par\fellowshipVSpace} % Less vertical space between fellowships
 \newenvironment{jobDuties}{\descriptionVSpace}{\par}
+\newenvironment{menteeItem}{\entryNeedspace}{\par\menteeVSpace} % Less vertical space between mentees
 \newenvironment{projectDescription}{\descriptionVSpace}{\par}
+\newenvironment{publicationItem}{\entryNeedspace}{\par\publicationVSpace} % Less vertical space between publications
+\newenvironment{rSection}[1]{%
+	\par
+	\setCvSectionHeader{#1}%
+	\recordCvSectionHeaderWidth%
+	\begin{list}{}{%
+		\setlength{\leftmargin}{\cvsectionbodyoffset}%
+		\setlength{\rightmargin}{0pt}%
+		\setlength{\labelwidth}{\cvsectionbodyoffset}%
+		\setlength{\labelsep}{0pt}%
+		\setlength{\itemindent}{0pt}%
+		\setlength{\listparindent}{0pt}%
+		\setlength{\topsep}{0pt}%
+		\setlength{\partopsep}{0pt}%
+		\setlength{\parsep}{0pt}%
+		\setlength{\itemsep}{0pt}%
+		\renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{\raisebox{0pt}[0pt][0pt]{##1}}}%
+	}%
+	\item[\usebox{\cvsectionheaderbox}]%
+}{\end{list}\sectionVSpace\par}
+\newenvironment{rSubsection}{\entryNeedspace}{\par\subsectionVSpace} 
 \newenvironment{seminarDescription}{\descriptionVSpace}{\par}
-\newenvironment{fellowshipItem}{}{\par\fellowshipVSpace} % Less vertical space between fellowships
-\newenvironment{serviceItem}{}{\par\serviceVSpace} % Less vertical space between service items
-\newenvironment{publicationItem}{}{\par\publicationVSpace} % Less vertical space between publications
-\newenvironment{teachingItem}{}{\par\teachingVSpace} % Less vertical space between teaching items
-\newenvironment{menteeItem}{}{\par\menteeVSpace} % Less vertical space between mentees
+\newenvironment{serviceItem}{\entryNeedspace}{\par\serviceVSpace} % Less vertical space between service items
+\newenvironment{teachingItem}{\entryNeedspace}{\par\teachingVSpace} % Less vertical space between teaching items
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,10 +236,12 @@ anchorcolor = \linkColor]{hyperref}
 % Standard US letter paper width is 8.5in
 \newlength{\cvleftmargin}
 \newlength{\cvrightmargin}
-\newlength{\cvsectionwidth}
+\newlength{\cvsectionheaderwidth}
+\newlength{\cvsectiontextgap}
 \setlength{\cvleftmargin}{0.98in}   % Left margin (default: 1.7in)
 \setlength{\cvrightmargin}{\cvleftmargin}  % Right margin (default: 1.7in)
-\setlength{\cvsectionwidth}{1.3in}  % Distance from section headers to text (default: 1.3in)
+\setlength{\cvsectionheaderwidth}{0.5in}  % Wrap width for section headers
+\setlength{\cvsectiontextgap}{0.3in}  % Gap between section headers and body text
 
 % Apply margin settings after resume class initialization
 \AtBeginDocument{%
@@ -166,15 +263,18 @@ anchorcolor = \linkColor]{hyperref}
   % So: resumewidth = availablewidth (or less)
   \setlength{\resumewidth}{\availablewidth}%
   
-  % Override the section width set by the resume class
-  % This calls \newsectionwidth which sets: sectionwidth, textwidth, hsize, and hoffset
-  \newsectionwidth{\cvsectionwidth}%
+  % Section layout is handled locally by the rSection environment.
+  \setlength{\textwidth}{\resumewidth}%
+  \setlength{\hsize}{\textwidth}%
+  \setlength{\linewidth}{\textwidth}%
+  \setlength{\hoffset}{0pt}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\parskip}{0ex}
 
 \begin{document}
+\setCvSectionBodyOffset%
 
 \moveleft.5\hoffset\centerline{\large\bf \titleName}
 
@@ -242,7 +342,7 @@ anchorcolor = \linkColor]{hyperref}
 
 			\begin{jobDuties}
 				Designed and implemented \href{https://saa2025.github.io/papers/Cortex - Workflow-Aware Resource Pooling and Scheduling for Agentic Serving.pdf}
-				{Cortex}, a prototype agentic serving platform that leverages workflow-awareness and stage isolation to improve scheduling and KV cache efficiency in agentic NL2SQL workflows.
+				{Cortex}, a prototype agentic serving platform that leverages workflow awareness and stage isolation to improve scheduling and KV cache efficiency in agentic NL2SQL workflows.
 			\end{jobDuties}
 		\end{rSubsection}
 
@@ -540,7 +640,7 @@ anchorcolor = \linkColor]{hyperref}
 	%     \end{rSubsection}
 	% \end{rSection}
 
-	\begin{rSection}{Research\\Mentoring}
+	\begin{rSection}{Research Mentoring}
 		\begin{menteeItem}
 			\mentee{\href{https://www.linkedin.com/in/ggracelii/}{Grace Li}} \hfill \interval{Sep 2025}{Present}
 
@@ -564,7 +664,7 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{rSubsection}
 			\talk{VineLM: Trie-Based Fine-Grained Control for Agentic Workflows} \hfill \singleDate{May 2025}
 
-			\event{\href{https://lsd.ucsc.edu/lsd-seminar/2026sp/}{Languages, Systems, and Data Group Seminar @ University of California, Santa Cruz}}
+			\event{\href{https://lsd.ucsc.edu/lsd-seminar/2026sp/}{Languages, Systems, and Data Seminar @ University of California, Santa Cruz}}
 
 			\host{Lindsey Kuper}
 		\end{rSubsection}
@@ -572,7 +672,7 @@ anchorcolor = \linkColor]{hyperref}
 
 	\begin{rSection}{Skills}
 		\begin{rSubsection}
-			\begin{tabular}{@{} >{\bfseries}l l @{}}
+			\begin{tabular}[t]{@{} >{\bfseries}l l @{}}
 				Prog. Languages & Python, C, Shell, Javascript, Java, Go              \\
 				Frameworks      & LangChain, LangGraph                                \\
 				Platforms       & AWS, Docker, Kubernetes, Apache Kafka, Apache Spark \\
@@ -583,7 +683,7 @@ anchorcolor = \linkColor]{hyperref}
 
 	\begin{rSection}{Languages}
 		\begin{rSubsection}
-			\begin{tabular}{@{} >{\bfseries}l l @{}}
+			\begin{tabular}[t]{@{} >{\bfseries}l l @{}}
 				English & Fluent --- TOEFL iBT \( 116/120 \) (C2) \\
 				Greek   & Native                                  \\
 			\end{tabular}
