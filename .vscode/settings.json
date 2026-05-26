@@ -34,11 +34,14 @@
         "key"
     ],
     "latex-workshop.bibtex-format.trailingComma": true,
+    "latex-workshop.formatting.latexindent.path": "/usr/local/texlive/2024/bin/universal-darwin/latexindent",
+    "latex-workshop.linting.chktex.exec.path": "/usr/local/texlive/2024/bin/universal-darwin/chktex",
+    "latex-workshop.kpsewhich.path": "/usr/local/texlive/2024/bin/universal-darwin/kpsewhich",
     "emeraldwalk.runonsave": {
         "commands": [
             {
                 "match": "_bibliography/papers\\.bib$",
-                "cmd": "cd \"${workspaceFolder}\" && npm run format-bib"
+                "cmd": "cd \"${workspaceFolder}\" && PATH=\"/opt/homebrew/bin:$PATH\" npm run format-bib"
             }
         ]
     }

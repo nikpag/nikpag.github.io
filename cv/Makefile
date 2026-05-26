@@ -2,6 +2,15 @@
 
 export SHELL=/bin/bash
 
+TEXLIVE_BIN ?= /usr/local/texlive/2024/bin/universal-darwin
+ifneq ($(wildcard $(TEXLIVE_BIN)/latexmk),)
+LATEXMK ?= $(TEXLIVE_BIN)/latexmk
+PATH := $(TEXLIVE_BIN):$(PATH)
+export PATH
+else
+LATEXMK ?= latexmk
+endif
+
 FILE=main
 
 all: $(FILE).pdf
@@ -10,7 +19,7 @@ all: $(FILE).pdf
 # because of the package "minted" for typesetting
 # listings of code. Remove, if not needed.
 %.pdf: %.tex FORCE
-	latexmk -shell-escape -pdf -f -e '$$pdflatex=q/xelatex -synctex=1 -interaction=nonstopmode %O %S/' $<
+	PATH="$(TEXLIVE_BIN):$$PATH" $(LATEXMK) -shell-escape -pdf -f -e '$$pdflatex=q/xelatex -synctex=1 -interaction=nonstopmode %O %S/' $<
 	cp main.pdf ../assets/pdf/cv-nikolaos-pagonas.pdf
 
 clean:
