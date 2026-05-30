@@ -38,6 +38,56 @@ table {
   white-space: nowrap;
 }
 
+.news {
+  .news-scrollable-wrapper {
+    position: relative;
+  }
+
+  .news-scrollable {
+    box-sizing: border-box;
+    max-height: 16rem;
+    padding-right: 1rem;
+    overflow-y: scroll;
+    scrollbar-color: var(--global-text-color-light) transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 0.75rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--global-text-color-light);
+      border: 0.25rem solid var(--global-bg-color);
+      border-radius: 999px;
+    }
+  }
+
+  .news-scrollbar-indicator {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.15rem;
+    bottom: 0.35rem;
+    width: 0.35rem;
+    pointer-events: none;
+    background: var(--global-divider-color);
+    border-radius: 999px;
+
+    span {
+      display: block;
+      width: 100%;
+      min-height: 2rem;
+      background: var(--global-text-color-light);
+      border-radius: inherit;
+      opacity: 0.85;
+    }
+  }
+}
+
 .about-news,
 .about-selected-publications {
   margin-top: 2rem;
