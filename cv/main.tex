@@ -109,7 +109,7 @@ anchorcolor = \linkColor]{hyperref}
 \newcommand{\interval}[2]{#1 -- #2\xspace}
 \newcommand{\me}{\cvName\xspace}
 \newcommand{\mentee}[1]{\header{#1}\xspace}
-\newcommand{\menteePlace}[1]{\textit{#1}\xspace}
+\newcommand{\menteePlace}[2]{\textit{#1\if\relax\detokenize{#2}\relax\else{} $\rightarrow$ next: #2\fi}\xspace}
 \newcommand{\ordinal}[1]{\textsuperscript{#1}\xspace}
 \newcommand{\paperTitle}[1]{\textbf{#1}}
 \newcommand{\place}[1]{#1\xspace}
@@ -644,19 +644,19 @@ anchorcolor = \linkColor]{hyperref}
 		\begin{menteeItem}
 			\mentee{\href{https://www.linkedin.com/in/ggracelii/}{Grace Li}} \hfill \interval{Sep 2025}{Present}
 
-			\menteePlace{Columbia University, BS in CS and Math}
+			\menteePlace{Columbia University, BS}{}
 		\end{menteeItem}
 
 		\begin{menteeItem}
 			\mentee{\href{https://www.linkedin.com/in/matthew-lou-/}{Matthew Lou}} \hfill \interval{Sep 2025}{Present}
 
-			\menteePlace{Columbia University, BS in CS and Applied Math}
+			\menteePlace{Columbia University, BS}{Hudson River Trading}
 		\end{menteeItem}
 
 		\begin{menteeItem}
 			\mentee{\href{https://www.linkedin.com/in/j2hng/}{Joey Huang}} \hfill \interval{Sep 2025}{Dec 2025}
 
-			\menteePlace{Columbia University, BS in CS $\rightarrow$ next: Google}
+			\menteePlace{Columbia University, BS}{Google}
 		\end{menteeItem}
 	\end{rSection}
 
