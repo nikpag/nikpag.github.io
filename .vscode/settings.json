@@ -44,5 +44,6 @@
                 "cmd": "cd \"${workspaceFolder}\" && PATH=\"/opt/homebrew/bin:$PATH\" npm run format-bib"
             }
         ]
-    }
+    },
+    "codexNotifier.monitorCodexLog": true
 }

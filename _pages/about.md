@@ -19,7 +19,7 @@ I am a second-year PhD student in [Computer Science](https://www.cs.columbia.edu
 
 I am interested in improving the performance and efficiency of agentic serving. I build systems that exploit workflow structure and runtime characteristics to optimize model routing, scheduling, and resource allocation.
 
-This summer, I am working as a Research Intern at [Microsoft Research](https://www.microsoft.com/en-us/research/), supervised by [Sharad Agarwal](https://sharadagarwal.net).
+This summer, I am working as a Research Intern at [Microsoft Research](https://www.microsoft.com/en-us/research/) in the [Software-Hardware Co-design (SHARC) Group](https://www.microsoft.com/en-us/research/group/software-hardware-co-design-sharc/), supervised by [Sharad Agarwal](https://sharadagarwal.net).
 
 In Summer 2025, I was a Student Researcher at [Google](https://techsysinfra.google/research/), where I worked on [Cortex](https://saa2025.github.io/papers/Cortex%20-%20Workflow-Aware%20Resource%20Pooling%20and%20Scheduling%20for%20Agentic%20Serving.pdf), a workflow-aware agentic serving system, supervised by Prof. [Arvind Krishnamurthy](https://sites.google.com/cs.washington.edu/arvind). Before joining Columbia, I was a member of the [ATLAS](https://atlas.cs.brown.edu/) research group at [Brown University](https://cs.brown.edu/), where I worked on [PaSh](https://binpa.sh/), a [Linux Foundation](https://www.linuxfoundation.org/) project, advised by Prof. [Nikos Vasilakis](https://nikos.vasilak.is/). I received my Master's degree in [Electrical and Computer Engineering](https://www.ece.ntua.gr/en/) from the [National Technical University of Athens (NTUA)](https://www.ntua.gr/en/), where I was advised by Prof. [Georgios Goumas](http://www.cslab.ntua.gr/~goumas/).
 
