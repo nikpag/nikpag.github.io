@@ -15,7 +15,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a second-year PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/) and member of [DAPLab](https://daplab.cs.columbia.edu), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/). My research is supported by the [Columbia University](https://www.cs.columbia.edu/2024/meet-the-scholars-phd-students-with-prestigious-fellowships/) [Presidential Fellowship](https://www.cs.columbia.edu/2026/phd-students-recognized-with-top-fellowships/), the A.G. Leventis Foundation, and a Gerondelis Foundation Graduate Study Scholarship.
+I am a third-year PhD student in [Computer Science](https://www.cs.columbia.edu/) at [Columbia University](https://www.columbia.edu/) and member of [DAPLab](https://daplab.cs.columbia.edu), advised by Prof. [Kostis Kaffes](https://www.cs.columbia.edu/~kkaffes/). My research is supported by the [Columbia University](https://www.cs.columbia.edu/2024/meet-the-scholars-phd-students-with-prestigious-fellowships/) [Presidential Fellowship](https://www.cs.columbia.edu/2026/phd-students-recognized-with-top-fellowships/), the A.G. Leventis Foundation, and a Gerondelis Foundation Graduate Study Scholarship.
 
 I am interested in improving the performance and efficiency of agentic serving. I build systems that exploit workflow structure and runtime characteristics to optimize model routing, scheduling, and resource allocation.
 
