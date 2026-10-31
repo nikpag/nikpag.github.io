@@ -18,3 +18,5 @@ conda run -n website make -C cv
 ```
 
 If compilation fails because of local environment issues, report the exact failure.
+
+Publications are dated and ordered by `_bibliography/papers.bib` (newest first), and the CV lists them in the same order. After adding or changing a paper, use the `organizepubs` skill (`.claude/skills/organizepubs`, `.agents/skills/organizepubs`).
