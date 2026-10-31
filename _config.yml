@@ -89,7 +89,7 @@ work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
-dblp_url: # your DBLP profile url
+dblp_url: https://dblp.org/pid/420/0567.html # your DBLP profile url
 stackoverflow_id: # your stackoverflow id
 kaggle_id: # your kaggle id
 lastfm_id: # your lastfm id
@@ -318,6 +318,7 @@ filtered_bibtex_keywords:
     website,
     preview,
     altmetric,
+    under_submission,
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
