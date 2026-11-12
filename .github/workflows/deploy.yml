@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout 🛎️
-      uses: actions/checkout@v3
+      uses: actions/checkout@v7
     # .ruby-version pins the exact Ruby used locally (e.g. 3.3.5), but newer
     # runner images only have the latest patch of each series, so use the
     # newest release of the same series (e.g. 3.3) here.
@@ -34,7 +34,6 @@ jobs:
         bundler-cache: true
     - name: Install and Build 🔧
       run: |
-        npm install -g mermaid.cli
         export JEKYLL_ENV=production
         bundle exec jekyll build
     - name: Deploy 🚀
