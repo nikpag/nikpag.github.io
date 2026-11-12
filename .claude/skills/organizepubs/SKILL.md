@@ -9,6 +9,10 @@ description: Organizes publications on the website and CV. Checks every entry in
 
 **Under submission.** An entry with `under_submission = {true}` has no date (no `year`, `month` or `day`), no venue and no `abbr` (the website draws its chip from the flag). It goes after all dated papers, both in the bib and on the CV. Its authors stay in the bib, but neither the website nor the CV shows authors or a venue for it: the homepage leaves it out, and the publications page shows it after the year groups, under its own gray "Submitted" heading in place of a year, a "Submitted" venue chip, and "Under Submission" in place of the authors (`_pages/publications.md`, `_layouts/bib.html`); the CV item has only `\paperTitle{…}` and `\underSubmission`, with no `\authors` or `\venue` line, not even commented out. Every other entry must have a `year`: an undated entry without the flag breaks the website build (jekyll-scholar groups by year). When a paper is accepted or posted, remove the flag and give it a date like any other entry.
 
+**Links.** A paper with both an arXiv version and a venue version keeps both in the bib: `arxiv` holds the arXiv ID and `pdf` (a venue PDF) or `html` (a venue or publisher page) holds the authoritative link. The website shows an "arXiv" button and a "PDF"/"HTML" button for them (`_layouts/bib.html`); the CV links only the authoritative one (step 3).
+
+**Submission details.** Any entry submitted for review (under-submission or a posted preprint) may record its submission in `submission_venue`, `submission_title` (the anonymized title, if different), `submission_date`, `submission_id` and `submission_notification`. These are notes for the user only: `_config.yml` filters them out of the website's BibTeX, and the CV never shows them. Keep them when re-dating or re-sorting; remove them once the paper is accepted and its venue is filled in. When you finish, run `conda run -n website make anoncheck`, which fails if the system name of any `submission_title` shows up on the website or the CV.
+
 ## 1. Fix the dates
 
 For every entry in `papers.bib` except under-submission ones, find the authoritative date and set `year`, `month` (bare three-letter macro, e.g. `apr`) and `day` (two digits, e.g. `{09}`):
@@ -27,7 +31,7 @@ Run from the repo root (`bibtex-tidy` is pinned in `package.json`; run `npm inst
 
 ```bash
 npx bibtex-tidy _bibliography/papers.bib --modify --align=14 --blank-lines --months --space=2 --trailing-commas \
-  --sort-fields=abbr,abstract,archiveprefix,arxiv,author,bibtex_show,blog,booktitle,code,day,doi,eprint,html,journal,month,note,pdf,poster,preview,primaryclass,selected,slides,supp,title,under_submission,url,year \
+  --sort-fields=abbr,abstract,archiveprefix,arxiv,author,bibtex_show,blog,booktitle,code,day,doi,eprint,html,journal,month,note,pdf,poster,preview,primaryclass,selected,slides,submission_date,submission_id,submission_notification,submission_title,submission_venue,supp,title,under_submission,url,year \
   --sort=-year,-month,-day
 ```
 

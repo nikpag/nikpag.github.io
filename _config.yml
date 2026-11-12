@@ -319,6 +319,11 @@ filtered_bibtex_keywords:
     preview,
     altmetric,
     under_submission,
+    submission_date,
+    submission_id,
+    submission_notification,
+    submission_title,
+    submission_venue,
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
