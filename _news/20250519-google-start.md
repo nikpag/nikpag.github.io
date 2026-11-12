@@ -6,4 +6,4 @@ related_posts: false
 published: true
 ---
 
-I joined [Google](https://techsysinfra.google/research/) as a Student Researcher!
+I joined [Google](https://techsysinfra.google/research/) as a Student Researcher, working on workflow-aware agentic serving!
