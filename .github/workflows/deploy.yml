@@ -21,10 +21,16 @@ jobs:
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v3
+    # .ruby-version pins the exact Ruby used locally (e.g. 3.3.5), but newer
+    # runner images only have the latest patch of each series, so use the
+    # newest release of the same series (e.g. 3.3) here.
+    - name: Read Ruby series
+      id: ruby
+      run: echo "series=$(cut -d. -f1,2 .ruby-version)" >> "$GITHUB_OUTPUT"
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        # Ruby version comes from .ruby-version
+        ruby-version: ${{ steps.ruby.outputs.series }}
         bundler-cache: true
     - name: Install and Build 🔧
       run: |
