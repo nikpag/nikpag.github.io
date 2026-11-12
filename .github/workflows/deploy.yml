@@ -24,11 +24,10 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.2'
+        # Ruby version comes from .ruby-version
         bundler-cache: true
     - name: Install and Build 🔧
       run: |
-        pip3 install --upgrade jupyter
         npm install -g mermaid.cli
         export JEKYLL_ENV=production
         bundle exec jekyll build

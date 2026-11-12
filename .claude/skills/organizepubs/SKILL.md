@@ -11,7 +11,7 @@ description: Organizes publications on the website and CV. Checks every entry in
 
 **Links.** A paper with both an arXiv version and a venue version keeps both in the bib: `arxiv` holds the arXiv ID and `pdf` (a venue PDF) or `html` (a venue or publisher page) holds the authoritative link. The website shows an "arXiv" button and a "PDF"/"HTML" button for them (`_layouts/bib.html`); the CV links only the authoritative one (step 3).
 
-**Submission details.** Any entry submitted for review (under-submission or a posted preprint) may record its submission in `submission_venue`, `submission_title` (the anonymized title, if different), `submission_date`, `submission_id` and `submission_notification`. These are notes for the user only: `_config.yml` filters them out of the website's BibTeX, and the CV never shows them. Keep them when re-dating or re-sorting; remove them once the paper is accepted and its venue is filled in. When you finish, run `conda run -n website make anoncheck`, which fails if the system name of any `submission_title` shows up on the website or the CV.
+**Submission details.** Any entry submitted for review (under-submission or a posted preprint) may record its submission in `submission_venue`, `submission_title` (the anonymized title, if different), `submission_date`, `submission_id` and `submission_notification`. These are notes for the user only: `_config.yml` filters them out of the website's BibTeX, and the CV never shows them. Keep them when re-dating or re-sorting; remove them once the paper is accepted and its venue is filled in. When you finish, run `make anoncheck`, which fails if the system name of any `submission_title` shows up on the website or the CV.
 
 ## 1. Fix the dates
 
@@ -50,8 +50,8 @@ A published entry's `note` is the venue line the website shows, and the CV's `\v
 Follow `AGENTS.md`:
 
 ```bash
-conda run -n website make -C cv
-conda run -n website bundle exec jekyll build --destination "$TMPDIR/nikpag-site-build"
+make -C cv
+bundle exec jekyll build --destination "$TMPDIR/nikpag-site-build"
 ```
 
 `make -C cv` also copies the PDF to `assets/pdf/cv-nikolaos-pagonas.pdf`. Render the Publications page of `cv/main.pdf` (e.g. `pdftoppm -f <page> -l <page> -r 80 -png`) and look at it, and check the paper titles in the built `publications/index.html` appear in the same order, with under-submission papers at the end. Then report the final order and every date change.
